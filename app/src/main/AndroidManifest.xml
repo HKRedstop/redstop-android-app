@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ntredize.redstop"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
+
+    <!-- android 11 add package visibility permission -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/RedstopLightTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- to fix bug of class not found for Lorg/apache/http/ProtocolVersion -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.ntredize.redstop.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            android:name=".main.activity.app.SplashScreenActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.activity.app.TutorialActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.app.HomeActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.app.SuggestionActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.app.ScanBarcodeActivity"
+            android:screenOrientation="user"/>
+
+        <activity
+            android:name=".main.activity.app.CheckDeviceActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.app.CheckWebsiteActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.app.SearchResultActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable">
+            </meta-data>
+        </activity>
+
+        <activity
+            android:name=".main.activity.redcompany.RedCompanyCategoryListActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.redcompany.RedCompanySubCategoryListActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.redcompany.RedCompanyListActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".main.activity.redcompany.RedCompanyDetailActivity"
+            android:theme="@style/RedstopLightTheme.NoActionBar"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            tools:ignore="AppLinkUrlError">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="www.redstop.info" android:pathPrefix="/info/" />
+                <data android:scheme="http" android:host="redstop.info" android:pathPrefix="/info/" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.activity.redcompany.RelatedRedCompanyDetailActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+    </application>
+
+</manifest>

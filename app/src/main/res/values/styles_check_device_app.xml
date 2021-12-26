@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="checkDevicePageContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingEnd">25dp</item>
+    </style>
+
+    <style name="checkDevicePageContainerInnerVertical">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="checkDevicePageContainerInnerHorizontal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="checkDevicePageCircle">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/background_check_device_circle</item>
+    </style>
+
+    <style name="checkDevicePageImage">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="tintMode">src_in</item>
+        <item name="tint">@color/textOverColor</item>
+    </style>
+
+    <style name="checkDevicePageSpace">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">34dp</item>
+    </style>
+
+    <style name="checkDevicePageText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingMultiplier">1.3</item>
+    </style>
+
+    <style name="checkDevicePageTextVertical" parent="checkDevicePageText">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="checkDevicePageTextHorizontal" parent="checkDevicePageText">
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="checkDevicePageButtonContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="checkDevicePageButtonContainerVertical" parent="checkDevicePageButtonContainer">
+        <item name="android:layout_marginTop">75dp</item>
+    </style>
+
+    <style name="checkDevicePageButtonContainerHorizontal" parent="checkDevicePageButtonContainer">
+        <item name="android:layout_marginTop">25dp</item>
+    </style>
+
+    <style name="checkDevicePageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textColor">@color/textOverColor</item>
+        <item name="android:background">@drawable/button_background_check_device</item>
+        <item name="android:buttonStyle">@style/Base.Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+</resources>

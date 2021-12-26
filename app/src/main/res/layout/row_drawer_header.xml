@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!-- Upper Line -->
+    <RelativeLayout style="@style/drawerSeparateLine"/>
+
+
+    <!-- header -->
+    <RelativeLayout
+        style="@style/drawerHeaderContainer">
+        
+        <TextView
+            android:id="@+id/drawer_header_text"
+            style="@style/drawerHeaderText"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

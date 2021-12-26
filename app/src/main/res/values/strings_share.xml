@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="share_intent_title">分享</string>
+
+    <!-- Red Star -->
+    <string name="share_red_star_fill">★</string>
+    <string name="share_red_star_empty">☆</string>
+
+    <!-- Footer -->
+    <string name="share_footer_separator">\n\n============================</string>
+    <string name="share_footer_1">\n{0}</string>
+    <string name="share_footer_2">\nredstop.info/info/{0}</string>
+
+</resources>

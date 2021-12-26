@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundNormalColor">
+
+
+    <!-- Tab -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/search_result_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/primaryColor"
+                app:layout_scrollFlags="enterAlways"
+                app:popupTheme="@style/AppTheme"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/search_result_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:tabIndicatorHeight="5dp"
+                app:tabIndicatorColor="@color/textOverColor"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <!-- Loading -->
+        <RelativeLayout
+            android:id="@+id/search_result_loading_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                style="@style/mySpinner"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+        <!-- Content -->
+        <com.ntredize.redstop.main.view.viewpager.MyViewPager
+            android:id="@+id/search_result_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

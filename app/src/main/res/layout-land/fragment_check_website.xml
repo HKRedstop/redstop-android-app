@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ntredize.redstop.main.view.container.NonAutoFocusScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/checkWebsitePageContainerHorizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:baselineAligned="true">
+
+        <!-- Start Padding -->
+        <View style="@style/checkWebsitePageContainerPaddingHorizontal"/>
+
+
+        <!-- Main Content -->
+        <LinearLayout style="@style/checkWebsitePageContainerInnerHorizontal">
+
+            <!-- Logo -->
+            <RelativeLayout style="@style/checkWebsitePageCircle">
+
+                <ImageView
+                    android:id="@+id/check_website_image"
+                    android:src="@drawable/check_website_image"
+                    android:contentDescription="@string/content_desc_check_website"
+                    style="@style/checkWebsitePageImage"/>
+
+            </RelativeLayout>
+
+
+            <View style="@style/checkWebsitePageSpaceBelowLogo" />
+
+
+            <LinearLayout style="@style/checkWebsitePageContainerInnerVertical">
+
+
+                <!-- Search Section -->
+                <include layout="@layout/layout_check_website_search_section" />
+
+
+                <!-- Website Icon -->
+                <View style="@style/checkWebsitePageSpaceAboveWebsiteIcon" />
+
+                <LinearLayout style="@style/checkWebsitePageWebsiteIconRow">
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_website"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_website"
+                        android:contentDescription="@string/content_desc_check_website_website"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_wiki"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_wiki"
+                        android:contentDescription="@string/content_desc_check_website_wiki"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_facebook"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_facebook"
+                        android:contentDescription="@string/content_desc_check_website_facebook"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_ig"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_ig"
+                        android:contentDescription="@string/content_desc_check_website_ig"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_twitter"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_twitter"
+                        android:contentDescription="@string/content_desc_check_website_twitter"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_openrice"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_openrice"
+                        android:contentDescription="@string/content_desc_check_website_openrice"/>
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/checkWebsitePageWebsiteIconRow">
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_ios"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_ios"
+                        android:contentDescription="@string/content_desc_check_website_ios"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_android"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_android"
+                        android:contentDescription="@string/content_desc_check_website_android"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_steam"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_steam"
+                        android:contentDescription="@string/content_desc_check_website_steam"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_ps"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_ps"
+                        android:contentDescription="@string/content_desc_check_website_ps"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_xbox"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_xbox"
+                        android:contentDescription="@string/content_desc_check_website_xbox"/>
+
+                    <ImageView
+                        android:id="@+id/check_website_website_image_switch"
+                        style="@style/checkWebsitePageWebsiteIcon"
+                        android:src="@drawable/website_image_switch"
+                        android:contentDescription="@string/content_desc_check_website_switch"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- End Padding -->
+        <View style="@style/checkWebsitePageContainerPaddingHorizontal"/>
+
+    </LinearLayout>
+
+</com.ntredize.redstop.main.view.container.NonAutoFocusScrollView>

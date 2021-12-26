@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <!-- content -->
+    <RelativeLayout
+        style="@style/redCompanySubCategoryRowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- category name -->
+        <TextView
+            android:id="@+id/red_company_sub_category_row_name_text"
+            style="@style/redCompanySubCategoryRowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <!-- click cover -->
+    <RelativeLayout
+        android:id="@+id/red_company_sub_category_row_click_cover"
+        style="@style/commonListRowClickCover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

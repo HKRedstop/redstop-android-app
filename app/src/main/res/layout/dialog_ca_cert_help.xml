@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ntredize.redstop.main.view.container.NonAutoFocusScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout style="@style/caCertHelpDialogContainer">
+
+        <TextView
+            style="@style/caCertHelpDialogText"
+            android:text="@string/ca_cert_help_step_1"/>
+
+        <TextView
+            style="@style/caCertHelpDialogText"
+            android:text="@string/ca_cert_help_step_2"/>
+
+        <TextView
+            style="@style/caCertHelpDialogText"
+            android:text="@string/ca_cert_help_step_3"/>
+
+        <TextView
+            style="@style/caCertHelpDialogText"
+            android:text="@string/ca_cert_help_step_4"/>
+
+        <TextView
+            style="@style/caCertHelpDialogText"
+            android:text="@string/ca_cert_help_step_5"/>
+
+    </LinearLayout>
+
+</com.ntredize.redstop.main.view.container.NonAutoFocusScrollView>

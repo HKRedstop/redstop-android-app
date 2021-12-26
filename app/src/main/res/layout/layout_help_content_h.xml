@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ntredize.redstop.main.view.container.NonAutoFocusScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/help_content_h"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/helpDialogInner">
+
+        <!-- H5 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star5Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star5Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star5Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star5Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star5Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h5"/>
+
+
+        <!-- H4 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star4Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star4Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star4Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star4Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star4Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h4"/>
+
+
+        <!-- H3 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star3Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star3Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star3Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star3Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star3Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h3"/>
+
+
+        <!-- H2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star2Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star2Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star2Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star2Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star2Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h2"/>
+
+
+        <!-- H1 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_fill"
+                app:tint="?attr/star1Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star1Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star1Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star1Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star1Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h1"/>
+
+
+        <!-- H0 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star0Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star0Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star0Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star0Color"/>
+
+            <ImageView
+                style="@style/helpDialogRedStarImage"
+                android:contentDescription="@string/content_desc_company_red_star"
+                android:src="@drawable/image_star_outline"
+                app:tint="?attr/star0Color"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/helpDialogRedStarText"
+            android:text="@string/help_company_star_type_h0"/>
+
+    </LinearLayout>
+
+</com.ntredize.redstop.main.view.container.NonAutoFocusScrollView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ntredize.redstop.main.view.container.NoSwipeDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundNormalColor"
+    android:fitsSystemWindows="true"
+    tools:context=".main.activity.app.HomeActivity">
+
+
+    <!-- drawer -->
+    <include layout="@layout/drawer_main"/>
+
+
+    <!-- Main -->
+    <LinearLayout
+        style="@style/homePageOuterContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!-- Search Section -->
+        <RelativeLayout
+            style="@style/homePageTopContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <include layout="@layout/layout_home_search_section"/>
+
+        </RelativeLayout>
+
+
+        <!-- Category Section -->
+        <LinearLayout
+            style="@style/homePageBottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <!-- Company -->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    tools:ignore="UselessParent">
+
+                    <include layout="@layout/layout_home_category_company"/>
+
+                </RelativeLayout>
+
+
+                <!-- Person -->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- Version -->
+        <TextView
+            android:id="@+id/home_version_text"
+            style="@style/homePageVersionTextVertical"/>
+
+
+    </LinearLayout>
+
+</com.ntredize.redstop.main.view.container.NoSwipeDrawerLayout>

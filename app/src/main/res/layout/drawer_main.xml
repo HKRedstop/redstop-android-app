@@ -1,0 +1,22 @@
+<com.ntredize.redstop.main.drawer.MainDrawerContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_drawer_container"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="?attr/backgroundNormalColor">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundNormalColor">
+
+        <com.ntredize.redstop.main.view.recyclerview.MyRecyclerView
+            android:id="@+id/drawer_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"/>
+
+    </RelativeLayout>
+
+</com.ntredize.redstop.main.drawer.MainDrawerContainer>

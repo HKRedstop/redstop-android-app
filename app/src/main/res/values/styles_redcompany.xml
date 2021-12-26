@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Category Row -->
+    <style name="redCompanyCategoryRowContainer">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:background">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="redCompanyCategoryRowText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+    </style>
+
+
+    <!-- Sub Category Row -->
+    <style name="redCompanySubCategoryRowContainer">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingStart">25dp</item>
+        <item name="android:paddingEnd">25dp</item>
+        <item name="android:background">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="redCompanySubCategoryRowText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+    </style>
+
+
+    <!-- Company Row -->
+    <style name="redCompanyRowContainer">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:background">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="redCompanyRowLogoImageContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">?attr/rowImageBorderWidth</item>
+    </style>
+
+    <style name="redCompanyRowLogoImage">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:padding">?attr/rowImagePadding</item>
+    </style>
+
+    <style name="redCompanyRowDisplayNameText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+    </style>
+
+    <style name="redCompanyRowDisplaySubNameText">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/textRemarkColor</item>
+    </style>
+
+    <style name="redCompanyRowRedStarImageContainer">
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="redCompanyRowRedStarImage">
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_marginStart">3dp</item>
+    </style>
+
+
+    <!-- Company No Result / Too Many Results -->
+    <style name="redCompanyNoResultContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="redCompanyNoResultText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:text">@string/label_red_company_no_result</item>
+    </style>
+
+
+    <!-- Company Detail -->
+    <style name="redCompanyDetailInfoContainer">
+        <item name="android:paddingTop">30dp</item>
+        <item name="android:paddingBottom">30dp</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+    </style>
+
+    <style name="redCompanyDetailLogoImageContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:padding">?attr/detailImageBorderWidth</item>
+    </style>
+
+    <style name="redCompanyDetailLogoImage">
+        <item name="android:layout_height">160dp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:padding">?attr/detailImagePadding</item>
+    </style>
+
+    <style name="redCompanyDetailName">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+    </style>
+
+    <style name="redCompanyDetailRedStarSpace">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+
+    <style name="redCompanyDetailRedStarContainer">
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_width">198dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+    <style name="redCompanyDetailRedStar">
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_marginStart">3dp</item>
+        <item name="android:layout_marginEnd">3dp</item>
+    </style>
+
+    <style name="redCompanyDetailRedStarDesc">
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/textRemarkColor</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="redCompanyDetailDesc">
+        <item name="android:textSize">18sp</item>
+        <item name="android:maxLines">99</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+        <item name="android:breakStrategy" tools:targetApi="23">simple</item>
+    </style>
+
+    <style name="redCompanyDetailDescSpace">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">25dp</item>
+    </style>
+
+    <style name="redCompanyDetailUpdateDate">
+        <item name="android:paddingTop">50dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/textRemarkColor</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/helpDialogContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- star type -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- C -->
+        <LinearLayout
+            android:id="@+id/help_star_type_c_button"
+            style="@style/helpDialogStarTypeItem"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/help_star_type_c_button_text"
+                style="@style/helpDialogStarTypeText"
+                android:text="@string/help_company_star_type_c"/>
+
+        </LinearLayout>
+
+        <!-- H -->
+        <LinearLayout
+            android:id="@+id/help_star_type_h_button"
+            style="@style/helpDialogStarTypeItem"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/help_star_type_h_button_text"
+                style="@style/helpDialogStarTypeText"
+                android:text="@string/help_company_star_type_h"/>
+
+        </LinearLayout>
+
+        <!-- F -->
+        <LinearLayout
+            android:id="@+id/help_star_type_f_button"
+            style="@style/helpDialogStarTypeItem"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/help_star_type_f_button_text"
+                style="@style/helpDialogStarTypeText"
+                android:text="@string/help_company_star_type_f"/>
+
+        </LinearLayout>
+
+        <!-- W -->
+        <LinearLayout
+            android:id="@+id/help_star_type_w_button"
+            style="@style/helpDialogStarTypeItem"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/help_star_type_w_button_text"
+                style="@style/helpDialogStarTypeText"
+                android:text="@string/help_company_star_type_w"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/textRemarkColor"/>
+
+
+    <!-- content -->
+    <include layout="@layout/layout_help_content_c"/>
+    <include layout="@layout/layout_help_content_h"/>
+    <include layout="@layout/layout_help_content_f"/>
+    <include layout="@layout/layout_help_content_w"/>
+
+</LinearLayout>

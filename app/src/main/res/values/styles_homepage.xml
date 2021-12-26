@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Outer Container -->
+    <style name="homePageOuterContainer">
+        <item name="android:paddingTop">30dp</item>
+        <item name="android:paddingStart">30dp</item>
+        <item name="android:paddingEnd">30dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+
+    <!-- Inner Container -->
+    <style name="homePageTopContainer">
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="homePageBottomContainer">
+        <item name="android:paddingTop">15dp</item>
+    </style>
+
+    <style name="homePageLeftContainer">
+        <item name="android:paddingEnd">15dp</item>
+    </style>
+
+    <style name="homePageRightContainer">
+        <item name="android:paddingStart">15dp</item>
+    </style>
+
+
+    <!-- Search Section -->
+    <style name="homePageSearchSection">
+        <item name="android:background">@drawable/background_home_search_section</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!-- Category Button -->
+    <style name="homePageCategoryButton">
+        <item name="android:background">@drawable/button_background_home_category</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="homePageCategoryButtonImage">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:tintMode">src_in</item>
+        <item name="tint">?attr/homeCategoryButtonTextColor</item>
+    </style>
+
+    <style name="homePageCategoryButtonText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">?attr/homeCategoryButtonTextColor</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+    <!-- Version -->
+    <style name="homePageVersionTextVertical" parent="homePageVersionText">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="homePageVersionTextHorizontal" parent="homePageVersionText">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textAlignment">textEnd</item>
+    </style>
+
+    <style name="homePageVersionText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:textColor">?attr/textRemarkColor</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

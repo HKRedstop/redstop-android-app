@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">?attr/primaryColor</item>
+        <item name="colorPrimaryDark">?attr/primaryColorDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="autoCompleteTextViewStyle">@style/tabCursorColor</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:textColorPrimary">?attr/textNormalColor</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">?attr/backgroundNormalColor</item>
+        <item name="android:textColorPrimary">?attr/textNormalColor</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogNegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogPositiveButtonStyle</item>
+        <item name="android:backgroundDimAmount">?attr/dialogDimAmount</item>
+    </style>
+
+    <style name="DialogNegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">?attr/textRemarkColor</item>
+    </style>
+
+    <style name="DialogPositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">?attr/primaryColor</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="tabCursorColor" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:textCursorDrawable">@drawable/cursor_textview_tab</item>
+    </style>
+
+
+    <!-- Common -->
+    <style name="commonEditText">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:backgroundTint">?attr/textRemarkColor</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+        <item name="android:textColorHint">?attr/textRemarkColor</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_textview_normal</item>
+    </style>
+
+    <style name="commonCircleButton">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:background">@drawable/button_background_common_circle</item>
+    </style>
+
+    <style name="commonListDummyFocusView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
+    <style name="commonListRowClickCover">
+        <item name="android:background">@drawable/form_list_item</item>
+    </style>
+
+
+
+    <!-- List -->
+    <style name="listHeaderContainer">
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:background">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="listHeaderText">
+        <item name="android:textColor">?attr/primaryColor</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">@string/label_dummy</item>
+    </style>
+
+    <style name="listHeaderTextDummy" parent="listHeaderText">
+        <item name="android:textColor">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="listHeaderBottomLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">?attr/primaryColor</item>
+    </style>
+
+    <style name="listHeaderBottomLineDummy" parent="listHeaderBottomLine">
+        <item name="android:background">?attr/backgroundNormalColor</item>
+    </style>
+
+
+
+    <!-- Progress -->
+    <style name="mySpinner" parent="@style/Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:indeterminateTint">?attr/primaryColor</item>
+    </style>
+
+    <style name="mySmallSpinner" parent="@style/Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:indeterminateTint">?attr/primaryColor</item>
+    </style>
+
+
+
+    <!-- Page Indicator -->
+    <style name="pageIndicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="piv_animationType">scale</item>
+        <item name="piv_dynamicCount">true</item>
+        <item name="piv_interactiveAnimation">true</item>
+        <item name="piv_selectedColor">@color/textOverColor</item>
+        <item name="piv_unselectedColor">@color/textOverColorLight</item>
+        <item name="piv_padding">6dp</item>
+        <item name="piv_radius">6dp</item>
+    </style>
+
+</resources>

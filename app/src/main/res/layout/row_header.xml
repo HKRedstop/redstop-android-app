@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <!-- !!! -->
+    <!-- If change row_header.xml, need to change row_header_dummy.xml -->
+    <!-- !!! -->
+
+
+    <RelativeLayout
+        style="@style/listHeaderContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- header -->
+        <TextView
+            android:id="@+id/row_header_text"
+            style="@style/listHeaderText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <!-- Bottom Line -->
+    <RelativeLayout style="@style/listHeaderBottomLine"/>
+
+</LinearLayout>

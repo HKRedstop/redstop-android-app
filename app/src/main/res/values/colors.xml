@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- application -->
+    <color name="colorAccent">#3F3F3F</color>
+
+    <!-- layout -->
+    <color name="backgroundSplash">#262626</color>
+    <color name="backgroundCamera">#000000</color>
+
+    <!-- text -->
+    <color name="textOverColor">#FFFFFF</color>
+    <color name="textOverColorLight">#CCCCCC</color>
+    <color name="textTab">#FFFFFF</color>
+
+    <!-- tutorial -->
+    <color name="tutorialIntro">#D41A1A</color>
+    <color name="tutorialStar">#268AE7</color>
+    <color name="tutorialCheckDevice">#595959</color>
+
+</resources>

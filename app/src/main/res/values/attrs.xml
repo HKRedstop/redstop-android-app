@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="primaryColor" format="color"/>
+    <attr name="primaryColorDark" format="color"/>
+    <attr name="primaryColorTransparent" format="color"/>
+    <attr name="primaryColorMoreTransparent" format="color"/>
+
+    <attr name="navigationBackgroundColor" format="color"/>
+    <attr name="navigationSeparatorColor" format="color"/>
+
+    <attr name="dialogDimAmount" format="float"/>
+
+    <attr name="backgroundNormalColor" format="color"/>
+    <attr name="backgroundSeparatorColor" format="color"/>
+
+    <attr name="textNormalColor" format="color"/>
+    <attr name="textRemarkColor" format="color"/>
+
+    <attr name="imageBackgroundColor" format="color"/>
+    <attr name="imageBorderColor" format="color"/>
+    <attr name="rowImageBorderWidth" format="dimension"/>
+    <attr name="rowImagePadding" format="dimension"/>
+    <attr name="detailImageBorderWidth" format="dimension"/>
+    <attr name="detailImagePadding" format="dimension"/>
+
+    <attr name="star5Color" format="color"/>
+    <attr name="star4Color" format="color"/>
+    <attr name="star3Color" format="color"/>
+    <attr name="star2Color" format="color"/>
+    <attr name="star1Color" format="color"/>
+    <attr name="star0Color" format="color"/>
+
+    <attr name="homeSearchBorderColor" format="color"/>
+    <attr name="homeSearchBorderWidth" format="dimension"/>
+    <attr name="homeCategoryButtonBackgroundColor" format="color"/>
+    <attr name="homeCategoryButtonBackgroundColorActive" format="color"/>
+    <attr name="homeCategoryButtonBorderColor" format="color"/>
+    <attr name="homeCategoryButtonBorderWidth" format="dimension"/>
+    <attr name="homeCategoryButtonTextColor" format="color"/>
+
+    <attr name="website_image_website_alpha" format="float"/>
+    <attr name="website_image_wiki_alpha" format="float"/>
+    <attr name="website_image_facebook_alpha" format="float"/>
+    <attr name="website_image_ig_alpha" format="float"/>
+    <attr name="website_image_twitter_alpha" format="float"/>
+    <attr name="website_image_openrice_alpha" format="float"/>
+    <attr name="website_image_ios_alpha" format="float"/>
+    <attr name="website_image_android_alpha" format="float"/>
+    <attr name="website_image_steam_alpha" format="float"/>
+    <attr name="website_image_ps_alpha" format="float"/>
+    <attr name="website_image_xbox_alpha" format="float"/>
+    <attr name="website_image_switch_alpha" format="float"/>
+
+</resources>

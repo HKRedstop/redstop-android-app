@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ntredize.redstop.main.view.container.NonAutoFocusScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/redCompanyDetailInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
+
+
+        <!-- Logo -->
+        <RelativeLayout
+            android:id="@+id/red_company_detail_info_logo_image_container"
+            style="@style/redCompanyDetailLogoImageContainer">
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_logo_image"
+                style="@style/redCompanyDetailLogoImage"
+                android:contentDescription="@string/content_desc_company_logo"/>
+
+        </RelativeLayout>
+
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/red_company_detail_info_name_hk_text"
+            style="@style/redCompanyDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/red_company_detail_info_name_en_text"
+            style="@style/redCompanyDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <!-- Red Star -->
+        <View style="@style/redCompanyDetailRedStarSpace"/>
+
+        <LinearLayout
+            style="@style/redCompanyDetailRedStarContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_red_star_image_1"
+                style="@style/redCompanyDetailRedStar"
+                android:contentDescription="@string/content_desc_company_red_star"/>
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_red_star_image_2"
+                style="@style/redCompanyDetailRedStar"
+                android:contentDescription="@string/content_desc_company_red_star"/>
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_red_star_image_3"
+                style="@style/redCompanyDetailRedStar"
+                android:contentDescription="@string/content_desc_company_red_star"/>
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_red_star_image_4"
+                style="@style/redCompanyDetailRedStar"
+                android:contentDescription="@string/content_desc_company_red_star"/>
+
+            <ImageView
+                android:id="@+id/red_company_detail_info_red_star_image_5"
+                style="@style/redCompanyDetailRedStar"
+                android:contentDescription="@string/content_desc_company_red_star"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/red_company_detail_info_red_star_desc"
+            style="@style/redCompanyDetailRedStarDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View style="@style/redCompanyDetailRedStarSpace"/>
+
+
+        <!-- Description -->
+        <View style="@style/redCompanyDetailDescSpace"/>
+
+        <TextView
+            android:id="@+id/red_company_detail_info_desc_text"
+            style="@style/redCompanyDetailDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <!-- Stock Info -->
+        <View style="@style/redCompanyDetailDescSpace"/>
+
+        <TextView
+            android:id="@+id/red_company_detail_info_stock_text"
+            style="@style/redCompanyDetailDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <!-- Update Date -->
+        <TextView
+            android:id="@+id/red_company_detail_info_update_date"
+            style="@style/redCompanyDetailUpdateDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</com.ntredize.redstop.main.view.container.NonAutoFocusScrollView>

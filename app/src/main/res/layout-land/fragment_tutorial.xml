@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_container"
+    style="@style/tutorialPageContainer">
+
+    <LinearLayout style="@style/tutorialPageContainerInnerHorizontal">
+
+        <RelativeLayout style="@style/tutorialPageWhiteCircle">
+
+            <ImageView
+                android:id="@+id/tutorial_image"
+                style="@style/tutorialPageImage"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View style="@style/tutorialPageSpace" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tutorial_text"
+                style="@style/tutorialPageTextHorizontal"/>
+
+
+            <!-- Start Button -->
+            <RelativeLayout
+                android:id="@+id/tutorial_start_button_container"
+                style="@style/tutorialPageButtonContainerHorizontal">
+
+                <Button
+                    android:id="@+id/tutorial_start_button"
+                    style="@style/tutorialPageButton"
+                    android:text="@string/tutorial_start"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

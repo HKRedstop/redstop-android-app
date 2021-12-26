@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_search_button"
+        android:icon="@drawable/button_image_search"
+        app:iconTint="@color/textTab"
+        app:iconTintMode="src_in"
+        android:title="@string/label_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction,AppCompatResource"/>
+
+    <item
+        android:id="@+id/menu_sort_button"
+        android:icon="@drawable/button_image_sort"
+        app:iconTint="@color/textTab"
+        app:iconTintMode="src_in"
+        android:title="@string/label_sort"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_help_button"
+        android:icon="@drawable/button_image_help"
+        app:iconTint="@color/textTab"
+        app:iconTintMode="src_in"
+        android:title="@string/label_help"
+        app:showAsAction="always"/>
+
+</menu>

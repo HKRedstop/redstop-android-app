@@ -1,0 +1,133 @@
+<resources>
+
+    <!-- App -->
+    <string name="app_name">共業 REDSTOP</string>
+    <string name="app_version">Version: v%1$s</string>
+
+    <!-- Search -->
+    <string name="search_hint">搜尋…</string>
+
+    <!-- Label -->
+    <string name="label_dummy">DUMMY一二三</string>
+    <string name="label_help">幫助</string>
+    <string name="label_ca_cert_help">憑證</string>
+    <string name="label_sort">排序</string>
+    <string name="label_share">分享</string>
+    <string name="label_open">打開</string>
+    <string name="label_close">關閉</string>
+    <string name="label_stop">停止</string>
+    <string name="label_continue">繼續前往</string>
+    <string name="label_confirm">確定</string>
+    <string name="label_cancel">取消</string>
+    <string name="label_search">搜尋</string>
+    <string name="label_search_company">公司</string>
+    <string name="label_category_company">分類模式</string>
+    <string name="label_red_company_detail_info">公司資料</string>
+    <string name="label_red_company_related_company">相關公司</string>
+    <string name="label_red_company_no_result">沒有相關公司</string>
+    <string name="label_red_company_update_date">更新日期：</string>
+    <string name="label_scan_barcode">掃描商品條碼</string>
+    <string name="label_scan_barcode_country">註冊公司國家：</string>
+    <string name="label_scan_barcode_remark">註冊公司國家並不一定等於生產地\n請比較包裝上的「Made in XXX」</string>
+    <string name="label_check_device">檢查電話</string>
+    <string name="label_check_device_start_remark">此功能只能檢查\n「共業REDSTOP」資料庫</string>
+    <string name="label_check_device_start">開始檢查</string>
+    <string name="label_check_device_good">沒有相關資料</string>
+    <string name="label_check_device_tab_device">電話</string>
+    <string name="label_check_device_tab_apps">Apps</string>
+    <string name="label_check_device_tab_ca_certs">憑證</string>
+    <string name="label_check_website">檢查網頁</string>
+    <string name="label_check_website_hint">請輸入網址</string>
+
+    <!-- Drawer -->
+    <string name="drawer_help">評分準則</string>
+    <string name="drawer_suggestion">提供建議</string>
+    <string name="drawer_suggestion_url">https://forms.gle/tzXB8oKZ6Rzbmh789</string>
+    <string name="drawer_scan_barcode">掃描商品條碼</string>
+    <string name="drawer_scan_barcode_desc">查看商品的註冊公司國家</string>
+    <string name="drawer_check_device">檢查電話</string>
+    <string name="drawer_check_website">檢查網頁</string>
+    <string name="drawer_dark_mode">黑暗模式</string>
+    <string name="drawer_light_mode">日間模式</string>
+    <string name="open_store_msg_prefix">確定繼續前往Google Play，並下載「</string>
+    <string name="open_store_msg_suffix">」？</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial_introduction">搜尋中國及親中的\n企業、品牌、商品</string>
+    <string name="tutorial_red_star">星星數量\n代表親中程度</string>
+    <string name="tutorial_check_device">檢查電話的\n牌子、程式及憑證</string>
+    <string name="tutorial_start">開始使用</string>
+
+    <!-- Sort Popup -->
+    <string name="sort_name">名稱</string>
+    <string name="sort_popular">熱門</string>
+    <string name="sort_category">分類</string>
+    <string name="sort_star">評分</string>
+
+    <!-- Help Dialog -->
+    <string name="help_company_star_type_c">中資</string>
+    <string name="help_company_star_type_c5">中資擁有</string>
+    <string name="help_company_star_type_c4">中資為大股東</string>
+    <string name="help_company_star_type_c3">中資為主要股東</string>
+    <string name="help_company_star_type_c2">中資擁有一定股份</string>
+    <string name="help_company_star_type_c1">中資擁有少量股份</string>
+
+    <string name="help_company_star_type_h">港資</string>
+    <string name="help_company_star_type_h5">港共政治團體或商會</string>
+    <string name="help_company_star_type_h4">建制政治團體或商會</string>
+    <string name="help_company_star_type_h3">親共港資擁有</string>
+    <string name="help_company_star_type_h2">親共港資為股東</string>
+    <string name="help_company_star_type_h1">親共港資擁有少量股份 /\n中國特色營運手法</string>
+    <string name="help_company_star_type_h0">觀察名單</string>
+
+    <string name="help_company_star_type_f">殖民華商</string>
+    <string name="help_company_star_type_f3">殖民華商擁有</string>
+    <string name="help_company_star_type_f2">殖民華商為股東</string>
+    <string name="help_company_star_type_f1">殖民華商擁有少量股份 /\n中國特色營運手法</string>
+    <string name="help_company_star_type_f0">觀察名單</string>
+
+    <string name="help_company_star_type_w">外資</string>
+    <string name="help_company_star_type_w2">舐共外資</string>
+    <string name="help_company_star_type_w1">親共外資 /\n中國特色營運手法</string>
+    <string name="help_company_star_type_w0">觀察名單</string>
+
+    <!-- CA Cert Help Dialog -->
+    <string name="ca_cert_help_title">如何設定憑證</string>
+    <string name="ca_cert_help_step_1">(1) 前往「設定 / Settings」</string>
+    <string name="ca_cert_help_step_2">(2) 點選「安全性 / Security」</string>
+    <string name="ca_cert_help_step_3">(3) 打開「進階 / Advanced」，點選「加密和憑證 / Encryption &amp; credentials」</string>
+    <string name="ca_cert_help_step_4">(4) 點選「可信的憑證 / Trusted credentials」</string>
+    <string name="ca_cert_help_step_5">(5) 選擇使用或停用相關憑證</string>
+
+    <!-- Image Content Desc -->
+    <string name="content_desc_splash_screen">開始畫面</string>
+    <string name="content_desc_search">搜尋</string>
+    <string name="content_desc_company_logo">商標</string>
+    <string name="content_desc_company_red_star">星</string>
+    <string name="content_desc_company_red_star_5">5粒星</string>
+    <string name="content_desc_company_red_star_4">4粒星</string>
+    <string name="content_desc_company_red_star_3">3粒星</string>
+    <string name="content_desc_company_red_star_2">2粒星</string>
+    <string name="content_desc_company_red_star_1">1粒星</string>
+    <string name="content_desc_company_red_star_0">0粒星</string>
+    <string name="content_desc_tutorial_introduction">簡介</string>
+    <string name="content_desc_tutorial_red_star">星星數量</string>
+    <string name="content_desc_tutorial_check_device">檢查電話</string>
+    <string name="content_desc_drawer_image"> </string>
+    <string name="content_desc_check_device_start">檢查已安裝的程式</string>
+    <string name="content_desc_check_device_good">沒有相關程式</string>
+    <string name="content_desc_check_website">檢查網頁</string>
+    <string name="content_desc_check_website_website">網頁</string>
+    <string name="content_desc_check_website_wiki">Wiki</string>
+    <string name="content_desc_check_website_facebook">Facebook</string>
+    <string name="content_desc_check_website_ig">IG</string>
+    <string name="content_desc_check_website_twitter">Twitter</string>
+    <string name="content_desc_check_website_openrice">Openrice</string>
+    <string name="content_desc_check_website_ios">iOS</string>
+    <string name="content_desc_check_website_android">Android</string>
+    <string name="content_desc_check_website_steam">Steam</string>
+    <string name="content_desc_check_website_ps">PlayStation</string>
+    <string name="content_desc_check_website_xbox">Xbox</string>
+    <string name="content_desc_check_website_switch">Switch</string>
+
+</resources>

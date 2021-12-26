@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_container"
+    style="@style/tutorialPageContainer">
+
+    <LinearLayout style="@style/tutorialPageContainerInnerVertical">
+
+        <RelativeLayout style="@style/tutorialPageWhiteCircle">
+
+            <ImageView
+                android:id="@+id/tutorial_image"
+                style="@style/tutorialPageImage"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View style="@style/tutorialPageSpace" />
+
+        <TextView
+            android:id="@+id/tutorial_text"
+            style="@style/tutorialPageTextVertical"/>
+
+
+        <!-- Start Button -->
+        <RelativeLayout
+            android:id="@+id/tutorial_start_button_container"
+            style="@style/tutorialPageButtonContainerVertical">
+
+            <Button
+                android:id="@+id/tutorial_start_button"
+                style="@style/tutorialPageButton"
+                android:text="@string/tutorial_start"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

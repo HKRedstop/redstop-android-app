@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/sortPopupContainer"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/sortPopupContainerInner"
+        android:orientation="horizontal">
+
+
+        <!-- Popular -->
+        <LinearLayout
+            android:id="@+id/sort_popup_popular_container"
+            style="@style/sortPopupItemContainer"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/sort_popup_popular_image"
+                style="@style/sortPopupItemImage"
+                android:src="@drawable/button_image_popular"
+                android:contentDescription="@string/sort_popular"/>
+
+            <TextView
+                android:id="@+id/sort_popup_popular_text"
+                style="@style/sortPopupItemText"
+                android:text="@string/sort_popular"/>
+
+        </LinearLayout>
+
+
+        <!-- Name -->
+        <LinearLayout
+            android:id="@+id/sort_popup_name_container"
+            style="@style/sortPopupItemContainer"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/sort_popup_name_image"
+                style="@style/sortPopupItemImage"
+                android:src="@drawable/button_image_name"
+                android:contentDescription="@string/sort_name"/>
+
+            <TextView
+                android:id="@+id/sort_popup_name_text"
+                style="@style/sortPopupItemText"
+                android:text="@string/sort_name"/>
+
+        </LinearLayout>
+
+
+        <!-- Star -->
+        <LinearLayout
+            android:id="@+id/sort_popup_star_container"
+            style="@style/sortPopupItemContainer"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/sort_popup_star_image"
+                style="@style/sortPopupItemImage"
+                android:src="@drawable/button_image_star"
+                android:contentDescription="@string/sort_star"/>
+
+            <TextView
+                android:id="@+id/sort_popup_star_text"
+                style="@style/sortPopupItemText"
+                android:text="@string/sort_star"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

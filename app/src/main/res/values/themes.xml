@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Light -->
+    <style name="RedstopLightTheme" parent="AppTheme">
+
+        <item name="primaryColor">#D41A1A</item>
+        <item name="primaryColorDark">#AC1313</item>
+        <item name="primaryColorTransparent">#30D41A1A</item>
+        <item name="primaryColorMoreTransparent">#10D41A1A</item>
+
+        <item name="navigationBackgroundColor">#FFFFFF</item>
+        <item name="navigationSeparatorColor">#DDDDDD</item>
+
+        <item name="dialogDimAmount">0.6</item>
+
+        <item name="backgroundNormalColor">#FFFFFF</item>
+        <item name="backgroundSeparatorColor">#DDDDDD</item>
+
+        <item name="textNormalColor">#333333</item>
+        <item name="textRemarkColor">#AAAAAA</item>
+
+        <item name="imageBackgroundColor">#FFFFFF</item>
+        <item name="imageBorderColor">@android:color/transparent</item>
+        <item name="rowImageBorderWidth">0dp</item>
+        <item name="rowImagePadding">0dp</item>
+        <item name="detailImageBorderWidth">10dp</item>
+        <item name="detailImagePadding">0dp</item>
+
+        <item name="star5Color">#DF2E2E</item>
+        <item name="star4Color">#DB3995</item>
+        <item name="star3Color">#147DDE</item>
+        <item name="star2Color">#00B3DC</item>
+        <item name="star1Color">#00BC94</item>
+        <item name="star0Color">#009C0A</item>
+
+        <item name="homeSearchBorderColor">?attr/primaryColor</item>
+        <item name="homeSearchBorderWidth">4dp</item>
+        <item name="homeCategoryButtonBackgroundColor">?attr/primaryColor</item>
+        <item name="homeCategoryButtonBackgroundColorActive">?attr/primaryColorDark</item>
+        <item name="homeCategoryButtonBorderColor">?attr/primaryColor</item>
+        <item name="homeCategoryButtonBorderWidth">0dp</item>
+        <item name="homeCategoryButtonTextColor">@color/textOverColor</item>
+
+        <item name="website_image_website_alpha">0.15</item>
+        <item name="website_image_wiki_alpha">0.15</item>
+        <item name="website_image_facebook_alpha">0.25</item>
+        <item name="website_image_ig_alpha">0.25</item>
+        <item name="website_image_twitter_alpha">0.35</item>
+        <item name="website_image_openrice_alpha">0.2</item>
+        <item name="website_image_ios_alpha">0.15</item>
+        <item name="website_image_android_alpha">0.5</item>
+        <item name="website_image_steam_alpha">0.2</item>
+        <item name="website_image_ps_alpha">0.2</item>
+        <item name="website_image_xbox_alpha">0.25</item>
+        <item name="website_image_switch_alpha">0.2</item>
+
+    </style>
+
+    <style name="RedstopLightTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="RedstopLightTheme.Dialog" parent="DialogTheme"/>
+
+
+    <!-- Dark -->
+    <style name="RedstopDarkTheme" parent="AppTheme">
+
+        <item name="primaryColor">#bd4a4a</item>
+        <item name="primaryColorDark">#9e3434</item>
+        <item name="primaryColorTransparent">#48bd4a4a</item>
+        <item name="primaryColorMoreTransparent">#28bd4a4a</item>
+
+        <item name="navigationBackgroundColor">#000000</item>
+        <item name="navigationSeparatorColor">#000000</item>
+
+        <item name="dialogDimAmount">0.8</item>
+
+        <item name="backgroundNormalColor">#222222</item>
+        <item name="backgroundSeparatorColor">#555555</item>
+
+        <item name="textNormalColor">#FFFFFF</item>
+        <item name="textRemarkColor">#999999</item>
+
+        <item name="imageBackgroundColor">#FFFFFF</item>
+        <item name="imageBorderColor">#888888</item>
+        <item name="rowImageBorderWidth">2dp</item>
+        <item name="rowImagePadding">5dp</item>
+        <item name="detailImageBorderWidth">3dp</item>
+        <item name="detailImagePadding">15dp</item>
+
+        <item name="star5Color">#e05353</item>
+        <item name="star4Color">#db5ea5</item>
+        <item name="star3Color">#45a5f6</item>
+        <item name="star2Color">#4cc5e0</item>
+        <item name="star1Color">#5fd8be</item>
+        <item name="star0Color">#63c66a</item>
+
+        <item name="homeSearchBorderColor">?attr/textRemarkColor</item>
+        <item name="homeSearchBorderWidth">4dp</item>
+        <item name="homeCategoryButtonBackgroundColor">?attr/primaryColorMoreTransparent</item>
+        <item name="homeCategoryButtonBackgroundColorActive">?attr/primaryColorTransparent</item>
+        <item name="homeCategoryButtonBorderColor">?attr/primaryColor</item>
+        <item name="homeCategoryButtonBorderWidth">?attr/homeSearchBorderWidth</item>
+        <item name="homeCategoryButtonTextColor">?attr/primaryColor</item>
+
+        <item name="website_image_website_alpha">0.15</item>
+        <item name="website_image_wiki_alpha">0.15</item>
+        <item name="website_image_facebook_alpha">0.4</item>
+        <item name="website_image_ig_alpha">0.3</item>
+        <item name="website_image_twitter_alpha">0.2</item>
+        <item name="website_image_openrice_alpha">0.2</item>
+        <item name="website_image_ios_alpha">0.1</item>
+        <item name="website_image_android_alpha">0.15</item>
+        <item name="website_image_steam_alpha">0.2</item>
+        <item name="website_image_ps_alpha">0.35</item>
+        <item name="website_image_xbox_alpha">0.25</item>
+        <item name="website_image_switch_alpha">0.65</item>
+
+    </style>
+
+    <style name="RedstopDarkTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="RedstopDarkTheme.Dialog" parent="DialogTheme"/>
+
+</resources>

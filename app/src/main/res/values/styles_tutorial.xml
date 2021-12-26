@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="tutorialPageContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">25dp</item>
+        <item name="backgroundColor">?attr/backgroundNormalColor</item>
+    </style>
+
+    <style name="tutorialPageContainerInnerVertical">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="tutorialPageContainerInnerHorizontal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="tutorialPageWhiteCircle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:background">@drawable/background_tutorial_star_white_circle</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="tutorialPageImage">
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">160dp</item>
+    </style>
+
+    <style name="tutorialPageSpace">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">36dp</item>
+    </style>
+
+    <style name="tutorialPageText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textOverColor</item>
+        <item name="android:textSize" tools:ignore="SpUsage">22dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="tutorialPageTextVertical" parent="tutorialPageText">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="tutorialPageTextHorizontal" parent="tutorialPageText">
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="tutorialPageButtonContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="tutorialPageButtonContainerVertical" parent="tutorialPageButtonContainer">
+        <item name="android:layout_marginTop">40dp</item>
+    </style>
+
+    <style name="tutorialPageButtonContainerHorizontal" parent="tutorialPageButtonContainer">
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="tutorialPageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:textColor">?attr/textNormalColor</item>
+        <item name="android:background">@drawable/button_background_tutorial</item>
+        <item name="android:buttonStyle">@style/Base.Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+</resources>

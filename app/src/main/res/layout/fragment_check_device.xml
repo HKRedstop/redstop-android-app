@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/checkDevicePageContainer">
+
+    <LinearLayout style="@style/checkDevicePageContainerInnerVertical">
+
+        <RelativeLayout style="@style/checkDevicePageCircle">
+
+            <ImageView
+                android:id="@+id/check_device_image"
+                style="@style/checkDevicePageImage"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <View style="@style/checkDevicePageSpace" />
+
+        <TextView
+            android:id="@+id/check_device_text"
+            style="@style/checkDevicePageTextVertical"/>
+
+
+        <!-- Start Button -->
+        <RelativeLayout
+            android:id="@+id/check_device_start_button_container"
+            style="@style/checkDevicePageButtonContainerVertical">
+
+            <Button
+                android:id="@+id/check_device_start_button"
+                style="@style/checkDevicePageButton"
+                android:text="@string/label_check_device_start"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
