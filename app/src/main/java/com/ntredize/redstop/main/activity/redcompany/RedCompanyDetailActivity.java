@@ -129,6 +129,8 @@ public class RedCompanyDetailActivity extends ActivityBase {
 			redCompanyDisplayName = getIntent().getStringExtra(KEY_RED_COMPANY_DISPLAY_NAME);
 		}
 		
+		if (redCompanyCode == null) finish();
+		
 		// company group code and related company search criteria
 		// - format must be [groupCode]_xxxxxxx
 		redCompanyGroupCode = redCompanyCode.split("_")[0];

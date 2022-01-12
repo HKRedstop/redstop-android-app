@@ -58,6 +58,7 @@ public class RedCompanySubCategoryListActivity extends ActivityBase {
 	protected void initData() {
 		// category
 		String categoryCode = getIntent().getStringExtra(KEY_RED_COMPANY_CATEGORY_CODE);
+		if (categoryCode == null) finish();
 		category = redCompanyService.getRedCompanyCategoryByCategoryCode(categoryCode);
 		
 		// sub category list

@@ -102,9 +102,11 @@ public class SearchResultActivity extends ActivityBase implements SearchView.OnQ
 	protected void initData() {
 		// activity
 		activity = this;
-
+		
 		// search criteria
 		String searchKeyword = getIntent().getStringExtra(KEY_SEARCH_KEYWORD);
+		if (searchKeyword == null) finish();
+		
 		String sorting = sharedPreferenceService.getSearchSorting();
 		searchCriteria = new RedCompanySearchCriteria(searchKeyword, sorting);
 	}

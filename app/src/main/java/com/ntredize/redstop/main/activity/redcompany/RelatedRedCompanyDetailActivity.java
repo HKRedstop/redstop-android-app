@@ -88,15 +88,16 @@ public class RelatedRedCompanyDetailActivity extends ActivityBase {
 	@Override
 	protected void initData() {
 		// is dark mode
-		this.isDarkMode = sharedPreferenceService.isDarkMode();
+		isDarkMode = sharedPreferenceService.isDarkMode();
 		
 		// company detail
-		this.relatedRedCompanyCode = getIntent().getStringExtra(KEY_RELATED_RED_COMPANY_CODE);
-		this.relatedRedCompanyDisplayName = getIntent().getStringExtra(KEY_RELATED_RED_COMPANY_DISPLAY_NAME);
+		relatedRedCompanyCode = getIntent().getStringExtra(KEY_RELATED_RED_COMPANY_CODE);
+		relatedRedCompanyDisplayName = getIntent().getStringExtra(KEY_RELATED_RED_COMPANY_DISPLAY_NAME);
+		if (relatedRedCompanyCode == null) finish();
 		
 		// company group code
 		// - format must be [groupCode]_xxxxxxx
-		this.relatedRedCompanyGroupCode = relatedRedCompanyCode.split("_")[0];
+		relatedRedCompanyGroupCode = relatedRedCompanyCode.split("_")[0];
 	}
 
 	@Override

@@ -101,6 +101,7 @@ public class RedCompanyListActivity extends ActivityBase {
 		
 		// sub category
 		String subCategoryCode = getIntent().getStringExtra(KEY_RED_COMPANY_SUB_CATEGORY_CODE);
+		if (subCategoryCode == null) finish();
 		subCategory = redCompanyService.getRedCompanySubCategoryBySubCategoryCode(subCategoryCode);
 
 		// search criteria
