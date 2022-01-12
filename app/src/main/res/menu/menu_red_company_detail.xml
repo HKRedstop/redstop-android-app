@@ -13,6 +13,15 @@
         tools:ignore="AlwaysShowAction" />
 
     <item
+        android:id="@+id/menu_suggestion_button"
+        android:icon="@drawable/button_image_suggestion"
+        app:iconTint="@color/textTab"
+        app:iconTintMode="src_in"
+        android:title="@string/label_suggestion"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+    <item
         android:id="@+id/menu_help_button"
         android:icon="@drawable/button_image_help"
         app:iconTint="@color/textTab"

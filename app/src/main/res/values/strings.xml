@@ -13,6 +13,7 @@
     <string name="label_ca_cert_help">憑證</string>
     <string name="label_sort">排序</string>
     <string name="label_share">分享</string>
+    <string name="label_suggestion">提供建議</string>
     <string name="label_open">打開</string>
     <string name="label_close">關閉</string>
     <string name="label_stop">停止</string>
@@ -42,7 +43,7 @@
     <!-- Drawer -->
     <string name="drawer_help">評分準則</string>
     <string name="drawer_suggestion">提供建議</string>
-    <string name="drawer_suggestion_url">https://forms.gle/tzXB8oKZ6Rzbmh789</string>
+    <string name="drawer_suggestion_url">https://docs.google.com/forms/d/e/1FAIpQLSfrZWeV9s2RE6nsoI-NTo4B9d-Tl4jiHW4C4TIBGF-xZBaJow/viewform</string>
     <string name="drawer_scan_barcode">掃描商品條碼</string>
     <string name="drawer_scan_barcode_desc">查看商品的註冊公司國家</string>
     <string name="drawer_check_device">檢查電話</string>

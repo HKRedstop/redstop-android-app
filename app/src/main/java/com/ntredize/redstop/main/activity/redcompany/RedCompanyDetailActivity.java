@@ -21,6 +21,7 @@ import com.ntredize.redstop.db.model.RedCompanyGroupSearchCriteria;
 import com.ntredize.redstop.db.model.RedCompanySimpleWithCategory;
 import com.ntredize.redstop.db.model.SearchResult;
 import com.ntredize.redstop.main.activity.ActivityBase;
+import com.ntredize.redstop.main.activity.app.SuggestionActivity;
 import com.ntredize.redstop.main.dialog.HelpDialog;
 import com.ntredize.redstop.main.fragment.DummyFragment;
 import com.ntredize.redstop.main.fragment.redcompany.RedCompanyDetailInfoFragment;
@@ -279,6 +280,9 @@ public class RedCompanyDetailActivity extends ActivityBase {
 			case R.id.menu_share_button:
 				if (finishLoading) checkPermissionForShare(PermissionRequestCode.SHARE_RED_COMPANY);
 				return true;
+			case R.id.menu_suggestion_button:
+				if (finishLoading) goToSuggestionPage();
+				return true;
 			case R.id.menu_help_button:
 				if (finishLoading) showHelpDialog();
 				return true;
@@ -315,6 +319,15 @@ public class RedCompanyDetailActivity extends ActivityBase {
 		
 		if (logoUri != null) sendImageMsg(logoUri, msg);
 		else sendTextMsg(msg);
+	}
+	
+	
+	/* Menu - Suggestion */
+	private void goToSuggestionPage() {
+		Intent i = new Intent(this, SuggestionActivity.class);
+		i.putExtra(SuggestionActivity.KEY_RED_COMPANY_CODE, redCompanyDetail.getCompanyCode());
+		i.putExtra(SuggestionActivity.KEY_RED_COMPANY_DISPLAY_NAME, redCompanyDetail.getDisplayName());
+		startActivity(i);
 	}
 	
 	

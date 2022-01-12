@@ -2,6 +2,7 @@ package com.ntredize.redstop.main.activity.redcompany;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.ntredize.redstop.R;
 import com.ntredize.redstop.common.config.PermissionRequestCode;
 import com.ntredize.redstop.db.model.RedCompanyDetail;
 import com.ntredize.redstop.main.activity.ActivityBase;
+import com.ntredize.redstop.main.activity.app.SuggestionActivity;
 import com.ntredize.redstop.main.dialog.HelpDialog;
 import com.ntredize.redstop.main.fragment.redcompany.RedCompanyDetailInfoFragment;
 import com.ntredize.redstop.main.fragment.redcompany.RedCompanyNoSearchResultFragment;
@@ -210,6 +212,9 @@ public class RelatedRedCompanyDetailActivity extends ActivityBase {
 			case R.id.menu_share_button:
 				if (finishLoading) checkPermissionForShare(PermissionRequestCode.SHARE_RED_COMPANY);
 				return true;
+			case R.id.menu_suggestion_button:
+				if (finishLoading) goToSuggestionPage();
+				return true;
 			case R.id.menu_help_button:
 				if (finishLoading) showHelpDialog();
 				return true;
@@ -246,6 +251,15 @@ public class RelatedRedCompanyDetailActivity extends ActivityBase {
 		
 		if (logoUri  != null) sendImageMsg(logoUri , msg);
 		else sendTextMsg(msg);
+	}
+	
+	
+	/* Menu - Suggestion */
+	private void goToSuggestionPage() {
+		Intent i = new Intent(this, SuggestionActivity.class);
+		i.putExtra(SuggestionActivity.KEY_RED_COMPANY_CODE, relatedRedCompanyDetail.getCompanyCode());
+		i.putExtra(SuggestionActivity.KEY_RED_COMPANY_DISPLAY_NAME, relatedRedCompanyDetail.getDisplayName());
+		startActivity(i);
 	}
 	
 	

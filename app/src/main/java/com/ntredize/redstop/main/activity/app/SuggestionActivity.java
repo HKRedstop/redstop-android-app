@@ -15,12 +15,19 @@ import com.ntredize.redstop.R;
 import com.ntredize.redstop.main.activity.ActivityBase;
 import com.ntredize.redstop.support.service.ThemeService;
 
+import java.net.URLEncoder;
 import java.util.Objects;
 
 public class SuggestionActivity extends ActivityBase {
 	
+	public static final String KEY_RED_COMPANY_CODE = "KEY_RED_COMPANY_CODE";
+	public static final String KEY_RED_COMPANY_DISPLAY_NAME = "KEY_RED_COMPANY_DISPLAY_NAME";
+	
 	// service
 	private ThemeService themeService;
+	
+	// data
+	private String googleFormUrl;
 	
 	
 	/* Init */
@@ -46,12 +53,26 @@ public class SuggestionActivity extends ActivityBase {
 	}
 	
 	@Override
-	protected void initData() {}
+	protected void initData() {
+		String redCompanyCode = getIntent().getStringExtra(KEY_RED_COMPANY_CODE);
+		String redCompanyDisplayName = getIntent().getStringExtra(KEY_RED_COMPANY_DISPLAY_NAME);
+		
+		googleFormUrl = getString(R.string.drawer_suggestion_url);
+		if (redCompanyCode != null && redCompanyDisplayName != null) {
+			try {
+				String encodedName = URLEncoder.encode(redCompanyDisplayName + " // Reference: " + redCompanyCode, "UTF-8");
+				googleFormUrl += "?entry.1120467779=現時資料有錯漏&entry.1250330913=" + encodedName;
+			} catch (Exception ignored) {}
+		}
+	}
 	
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void initView() {
 		setContentView(R.layout.activity_suggestion);
+		
+		// title
+		setTitle(R.string.label_suggestion);
 		
 		// loading container
 		RelativeLayout loadingContainer = findViewById(R.id.suggestion_loading_container);
@@ -88,7 +109,7 @@ public class SuggestionActivity extends ActivityBase {
 				webView.setVisibility(View.VISIBLE);
 			}
 		});
-		webView.loadUrl(getString(R.string.drawer_suggestion_url));
+		webView.loadUrl(googleFormUrl);
 	}
 	
 	
