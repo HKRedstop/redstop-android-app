@@ -5,6 +5,7 @@
     <attr name="primaryColorDark" format="color"/>
     <attr name="primaryColorTransparent" format="color"/>
     <attr name="primaryColorMoreTransparent" format="color"/>
+    <attr name="accentColor" format="color"/>
 
     <attr name="navigationBackgroundColor" format="color"/>
     <attr name="navigationSeparatorColor" format="color"/>

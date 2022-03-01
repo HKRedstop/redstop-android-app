@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <!-- content -->
+    <RelativeLayout style="@style/settingRowContainer">
+
+        <!-- setting name -->
+        <TextView
+            android:id="@+id/setting_row_name"
+            style="@style/settingRowName" />
+
+        <!-- setting value -->
+        <TextView
+            android:id="@+id/setting_row_value"
+            style="@style/settingRowValue" />
+
+    </RelativeLayout>
+
+
+    <!-- click cover -->
+    <RelativeLayout
+        android:id="@+id/setting_row_click_cover"
+        style="@style/commonListRowClickCover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

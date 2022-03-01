@@ -14,6 +14,7 @@ public class ApplicationException extends Exception {
 	public final static int SYSTEM_ERROR = R.string.msg_system_error;
 	public final static int VIEW_URL_ERROR = R.string.msg_view_url_error;
 	public final static int SHARE_ERROR = R.string.msg_share_error;
+	public final static int SEND_EMAIL_ERROR = R.string.msg_send_email_error;
 	public final static int SCAN_ERROR = R.string.msg_scan_error;
 	public final static int INVALID_BARCODE_FORMAT = R.string.msg_barcode_format_invalid;
 	public final static int HTTP_CLIENT_ERROR = R.string.msg_http_client_error;

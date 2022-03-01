@@ -106,13 +106,13 @@ public class MainDrawerContainer extends RelativeLayout {
 		checkWebsiteItem.setAction(() -> activity.startCheckWebsite());
 		mainDrawerItemList.add(checkWebsiteItem);
 		
-		// dark mode
-		DrawerItem darkModeItem = new DrawerItem();
-		darkModeItem.setImageDrawable(ContextCompat.getDrawable(activity, isDarkMode ? R.drawable.drawer_image_light_mode : R.drawable.drawer_image_dark_mode));
-		darkModeItem.setTintImage(true);
-		darkModeItem.setName(activity.getString(isDarkMode ? R.string.drawer_light_mode : R.string.drawer_dark_mode));
-		darkModeItem.setAction(() -> activity.updateDarkMode());
-		mainDrawerItemList.add(darkModeItem);
+		// setting
+		DrawerItem settingItem = new DrawerItem();
+		settingItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_setting));
+		settingItem.setTintImage(true);
+		settingItem.setName(activity.getString(R.string.drawer_setting));
+		settingItem.setAction(() -> activity.startSetting());
+		mainDrawerItemList.add(settingItem);
 		
 		return mainDrawerItemList;
 	}

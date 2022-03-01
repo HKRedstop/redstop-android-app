@@ -1,4 +1,4 @@
-package com.ntredize.redstop.main.adapter.viewholder;
+package com.ntredize.redstop.main.recycler.viewholder;
 
 import android.os.Handler;
 import android.view.View;
@@ -9,28 +9,29 @@ import com.ntredize.redstop.R;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class RedCompanyCategoryViewHolder extends RecyclerView.ViewHolder {
+public class SettingItemViewHolder extends RecyclerView.ViewHolder {
 
     // listener
     public MyClickListener myClickListener;
 
     // view
-    private final TextView categoryNameText;
+    private final TextView textView;
 
-    public RedCompanyCategoryViewHolder(View itemView, MyClickListener myClickListener) {
+    public SettingItemViewHolder(View itemView, MyClickListener myClickListener) {
         super(itemView);
         this.myClickListener = myClickListener;
 
         // view
-        RelativeLayout clickCover = itemView.findViewById(R.id.red_company_category_row_click_cover);
-        categoryNameText = itemView.findViewById(R.id.red_company_category_row_name_text);
+        RelativeLayout clickCover = itemView.findViewById(R.id.setting_item_row_click_cover);
+        textView = itemView.findViewById(R.id.setting_item_row_text);
 
         // listener
         clickCover.setOnClickListener(myClickListener);
     }
 
-    public void updateCategoryName(String name) {
-        categoryNameText.setText(name);
+    public void updateText(String str) {
+        if (str != null) textView.setText(str);
+        else textView.setText("");
     }
 
 

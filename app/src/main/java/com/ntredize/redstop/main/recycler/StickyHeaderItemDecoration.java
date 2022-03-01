@@ -1,4 +1,4 @@
-package com.ntredize.redstop.main.adapter;
+package com.ntredize.redstop.main.recycler;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;

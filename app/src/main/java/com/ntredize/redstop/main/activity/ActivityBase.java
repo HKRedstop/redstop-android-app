@@ -287,4 +287,18 @@ public abstract class ActivityBase extends AppCompatActivity {
 		}).start();
 	}
 	
+	
+	/* Send Email */
+	public void sendEmail(String to) {
+		try {
+			Intent i = new Intent(Intent.ACTION_SENDTO);
+			i.setData(Uri.parse("mailto:" + to));
+			startActivity(i);
+		} catch (Exception e) {
+			Log.e(TAG, "Fail to send email");
+			Log.e(TAG, e.getMessage(), e);
+			errorHandling(new ApplicationException(this, ApplicationException.SEND_EMAIL_ERROR));
+		}
+	}
+	
 }

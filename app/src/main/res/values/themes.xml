@@ -8,6 +8,7 @@
         <item name="primaryColorDark">#AC1313</item>
         <item name="primaryColorTransparent">#30D41A1A</item>
         <item name="primaryColorMoreTransparent">#10D41A1A</item>
+        <item name="accentColor">#707070</item>
 
         <item name="navigationBackgroundColor">#FFFFFF</item>
         <item name="navigationSeparatorColor">#DDDDDD</item>
@@ -73,6 +74,7 @@
         <item name="primaryColorDark">#9e3434</item>
         <item name="primaryColorTransparent">#48bd4a4a</item>
         <item name="primaryColorMoreTransparent">#28bd4a4a</item>
+        <item name="accentColor">#C0C0C0</item>
 
         <item name="navigationBackgroundColor">#000000</item>
         <item name="navigationSeparatorColor">#000000</item>

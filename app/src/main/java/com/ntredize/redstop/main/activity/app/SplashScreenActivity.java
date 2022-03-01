@@ -59,6 +59,7 @@ public class SplashScreenActivity extends ActivityBase {
 	@Override
 	protected void initData() {
 		this.start = System.currentTimeMillis();
+		sharedPreferenceService.initAppearance(); // change shared preference from isDarkMode to appearance
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package com.ntredize.redstop.main.adapter.viewholder;
+package com.ntredize.redstop.main.recycler.viewholder;
 
 import android.view.View;
 

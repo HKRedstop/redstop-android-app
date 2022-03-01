@@ -71,6 +71,11 @@
             android:configChanges="orientation|screenSize"/>
 
         <activity
+            android:name=".main.activity.app.SettingActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
             android:name=".main.activity.app.SuggestionActivity"
             android:screenOrientation="user"
             android:configChanges="orientation|screenSize"/>

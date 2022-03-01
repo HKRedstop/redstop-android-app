@@ -2,7 +2,9 @@
 
     <!-- App -->
     <string name="app_name">共業 REDSTOP</string>
-    <string name="app_version">Version: v%1$s</string>
+    <string name="app_version">Android-v%1$s</string>
+    <string name="app_email">redstop.ntredize@gmail.com</string>
+    <string name="app_privacy_url">https://www.redstop.info/privacy</string>
 
     <!-- Search -->
     <string name="search_hint">搜尋…</string>
@@ -48,8 +50,7 @@
     <string name="drawer_scan_barcode_desc">查看商品的註冊公司國家</string>
     <string name="drawer_check_device">檢查電話</string>
     <string name="drawer_check_website">檢查網頁</string>
-    <string name="drawer_dark_mode">黑暗模式</string>
-    <string name="drawer_light_mode">日間模式</string>
+    <string name="drawer_setting">設定</string>
     <string name="open_store_msg_prefix">確定繼續前往Google Play，並下載「</string>
     <string name="open_store_msg_suffix">」？</string>
 
@@ -58,6 +59,18 @@
     <string name="tutorial_red_star">星星數量\n代表親中程度</string>
     <string name="tutorial_check_device">檢查電話的\n牌子、程式及憑證</string>
     <string name="tutorial_start">開始使用</string>
+
+    <!-- Setting -->
+    <string name="setting_title">設定</string>
+    <string name="setting_section_normal">一般</string>
+    <string name="setting_section_support">支援</string>
+    <string name="setting_appearance">外觀</string>
+    <string name="setting_appearance_light">日間模式</string>
+    <string name="setting_appearance_dark">黑暗模式</string>
+    <string name="setting_appearance_system">使用系統設定</string>
+    <string name="setting_version">版本</string>
+    <string name="setting_contact">聯絡我們</string>
+    <string name="setting_privacy">私穩政策</string>
 
     <!-- Sort Popup -->
     <string name="sort_name">名稱</string>

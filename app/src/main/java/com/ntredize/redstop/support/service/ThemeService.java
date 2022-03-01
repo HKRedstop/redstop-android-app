@@ -1,12 +1,10 @@
 package com.ntredize.redstop.support.service;
 
-import android.content.Intent;
 import android.os.Build;
 import android.view.View;
 
 import com.ntredize.redstop.R;
 import com.ntredize.redstop.main.activity.ActivityBase;
-import com.ntredize.redstop.main.activity.app.SplashScreenActivity;
 import com.ntredize.redstop.support.utils.AttrUtils;
 
 public class ThemeService {
@@ -60,17 +58,6 @@ public class ThemeService {
 	public int getDialogThemeId() {
 		boolean isDarkMode = sharedPreferenceService.isDarkMode();
 		return isDarkMode ? R.style.RedstopDarkTheme_Dialog : R.style.RedstopLightTheme_Dialog;
-	}
-	
-	public void changeTheme() {
-		// update user preference
-		boolean isDarkMode = sharedPreferenceService.isDarkMode();
-		sharedPreferenceService.updateDarkMode(!isDarkMode);
-		
-		// recreate activity to activate new theme
-		Intent i = new Intent(activityBase, SplashScreenActivity.class);
-		activityBase.startActivity(i);
-		activityBase.finish();
 	}
 	
 }

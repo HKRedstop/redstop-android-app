@@ -1,4 +1,4 @@
-package com.ntredize.redstop.main.adapter.redcompany;
+package com.ntredize.redstop.main.recycler.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import com.ntredize.redstop.R;
 import com.ntredize.redstop.db.model.RedCompanySubCategory;
 import com.ntredize.redstop.main.activity.ActivityBase;
 import com.ntredize.redstop.main.activity.redcompany.RedCompanySubCategoryListActivity;
-import com.ntredize.redstop.main.adapter.viewholder.RedCompanySubCategoryViewHolder;
+import com.ntredize.redstop.main.recycler.viewholder.RedCompanySubCategoryViewHolder;
 
 import java.util.List;
 

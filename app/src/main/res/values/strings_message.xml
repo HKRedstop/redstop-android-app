@@ -5,9 +5,10 @@
     <string name="msg_system_error">系統錯誤</string>
     <string name="msg_view_url_error">無法開啟網頁</string>
     <string name="msg_share_error">分享失敗</string>
+    <string name="msg_send_email_error">未能發送電郵</string>
     <string name="msg_scan_error">未能掃描條碼</string>
     <string name="msg_barcode_format_invalid">條碼格式錯誤</string>
     <string name="msg_http_client_error">無法連接伺服器，請稍後再試</string>
-    <string name="msg_check_device_privacy">我們會取得你裝置內「已安裝的程式」及「已信任的憑證」並傳送到伺服器，但不會儲存任何相關資料。確定繼續使用此功能？</string>
+    <string name="msg_check_device_privacy">我們會取得你裝置內「已安裝的程式」及「已信任的憑證」並傳送到伺服器，但不會儲存任何相關資料。確定繼續使用此功能？\n\nWe will obtain your \"Installed Apps\" and \"Trusted Certificates\", then send to our server without saving any data. Confirm to use this function?</string>
 
 </resources>

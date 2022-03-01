@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundNormalColor">
+
+
+    <!-- dummy view for measure height -->
+    <RelativeLayout
+        android:id="@+id/dummy_sticky_setting_list_header_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/row_header_dummy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <!-- recycler view -->
+    <com.ntredize.redstop.main.view.recyclerview.MyRecyclerView
+        android:id="@+id/setting_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundNormalColor"/>
+
+
+</RelativeLayout>

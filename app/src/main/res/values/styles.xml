@@ -5,7 +5,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">?attr/primaryColor</item>
         <item name="colorPrimaryDark">?attr/primaryColorDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">?attr/accentColor</item>
         <item name="autoCompleteTextViewStyle">@style/tabCursorColor</item>
         <item name="android:windowDisablePreview">true</item>
         <item name="android:textColorPrimary">?attr/textNormalColor</item>

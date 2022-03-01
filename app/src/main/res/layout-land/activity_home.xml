@@ -21,17 +21,10 @@
         android:layout_height="match_parent">
 
 
-        <!-- Version -->
-        <TextView
-            android:id="@+id/home_version_text"
-            style="@style/homePageVersionTextHorizontal"/>
-
-
         <!-- Main -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/home_version_text"
             android:orientation="horizontal"
             android:baselineAligned="false">
 
@@ -49,36 +42,15 @@
 
 
             <!-- Category Section -->
-            <LinearLayout
+            <RelativeLayout
                 style="@style/homePageRightContainer"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_weight="1">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:baselineAligned="false">
+                <include layout="@layout/layout_home_category_company"/>
 
-                    <!-- Company -->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        tools:ignore="UselessParent">
-
-                        <include layout="@layout/layout_home_category_company"/>
-
-                    </RelativeLayout>
-
-
-                    <!-- Person -->
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 

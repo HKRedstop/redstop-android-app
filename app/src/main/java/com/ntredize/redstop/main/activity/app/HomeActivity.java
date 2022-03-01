@@ -11,9 +11,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.ntredize.redstop.BuildConfig;
 import com.ntredize.redstop.R;
 import com.ntredize.redstop.main.activity.ActivityBase;
 import com.ntredize.redstop.main.activity.redcompany.RedCompanyCategoryListActivity;
@@ -82,10 +80,6 @@ public class HomeActivity extends ActivityBase implements View.OnClickListener {
 		// category button
 		RelativeLayout categoryCompanyButton = findViewById(R.id.home_category_company_button);
 		
-		// version
-		TextView versionText = findViewById(R.id.home_version_text);
-		versionText.setText(getString(R.string.app_version, BuildConfig.VERSION_NAME));
-		
 		// listener
 		searchText.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		searchText.setOnEditorActionListener((textView, i, keyEvent) -> {
@@ -101,6 +95,17 @@ public class HomeActivity extends ActivityBase implements View.OnClickListener {
 		
 		searchButton.setOnClickListener(this);
 		categoryCompanyButton.setOnClickListener(this);
+	}
+	
+	
+	/* On Resume, Reload Theme and Language */
+	@Override
+	public void onResume() {
+		super.onResume();
+		
+		// dark mode
+		boolean latestDarkMode = sharedPreferenceService.isDarkMode();
+		if (latestDarkMode != isDarkMode) recreate();
 	}
 	
 	
@@ -188,9 +193,10 @@ public class HomeActivity extends ActivityBase implements View.OnClickListener {
 	}
 	
 	
-	/* Update Dark Mode */
-	public void updateDarkMode() {
-		themeService.changeTheme();
+	/* Go to Setting Page */
+	public void startSetting() {
+		Intent i = new Intent(this, SettingActivity.class);
+		startActivity(i);
 	}
 	
 	

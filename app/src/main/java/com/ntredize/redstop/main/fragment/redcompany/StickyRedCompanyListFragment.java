@@ -11,9 +11,9 @@ import com.ntredize.redstop.R;
 import com.ntredize.redstop.db.model.RedCompanySimpleWithCategory;
 import com.ntredize.redstop.db.model.SearchResult;
 import com.ntredize.redstop.main.activity.ActivityBase;
-import com.ntredize.redstop.main.adapter.MyFormListDivider;
-import com.ntredize.redstop.main.adapter.StickyHeaderItemDecoration;
-import com.ntredize.redstop.main.adapter.redcompany.StickyRedCompanyAdapter;
+import com.ntredize.redstop.main.recycler.MyFormListDivider;
+import com.ntredize.redstop.main.recycler.StickyHeaderItemDecoration;
+import com.ntredize.redstop.main.recycler.adapter.StickyRedCompanyAdapter;
 import com.ntredize.redstop.main.view.recyclerview.MyRecyclerView;
 
 import androidx.annotation.NonNull;
