@@ -15,6 +15,8 @@ import com.ntredize.redstop.db.model.SearchResult;
 import com.ntredize.redstop.support.utils.HttpClient;
 
 import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RedCompanyWebService {
 	
@@ -84,14 +86,19 @@ public class RedCompanyWebService {
 	
 	
 	/* Get Red Company Detail */
-	public RedCompanyDetail getRedCompanyDetailByCompanyCode(String companyCode) {
+	public RedCompanyDetail getRedCompanyDetailByCompanyCode(String companyCode, boolean obtainAndroidPackage, boolean obtainCaCert) {
 		// api url
 		String apiUrl = ApiPath.API_RES_RED_COMPANY + ApiPath.API_PATH_RED_COMPANY_DETAIL;
 		apiUrl = apiUrl.replace(ApiPath.API_PARAM_COMPANY_CODE, companyCode);
 		
+		// query items
+		Map<String, String> queryItems = new HashMap<>();
+		queryItems.put(ApiPath.API_QUERY_KEY_ANDROID_PACKAGE, String.valueOf(obtainAndroidPackage));
+		queryItems.put(ApiPath.API_QUERY_KEY_CA_CERT, String.valueOf(obtainCaCert));
+		
 		// get
 		try {
-			byte[] data = httpClient.doGet(apiUrl);
+			byte[] data = httpClient.doGet(apiUrl, queryItems);
 			
 			// build model
 			return gson.fromJson(new String(data), RedCompanyDetail.class);

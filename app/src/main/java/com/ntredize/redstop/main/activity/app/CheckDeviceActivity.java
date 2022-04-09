@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.ntredize.redstop.R;
 import com.ntredize.redstop.common.exception.ApplicationException;
+import com.ntredize.redstop.db.model.AndroidDeviceAppPackageInfo;
+import com.ntredize.redstop.db.model.AndroidDeviceCaCert;
 import com.ntredize.redstop.db.model.AndroidDeviceSearchResult;
 import com.ntredize.redstop.db.model.RedCompanySimple;
 import com.ntredize.redstop.db.model.SearchResult;
@@ -66,6 +68,9 @@ public class CheckDeviceActivity extends ActivityBase {
 	// menu
 	private MenuItem helpMenuItem;
 	private MenuItem caCertHelpMenuItem;
+	private List<String> tabKeyList;
+	private List<AndroidDeviceAppPackageInfo> androidDeviceAppPackageInfos;
+	private List<AndroidDeviceCaCert> androidDeviceCaCerts;
 	
 	
 	/* Init */
@@ -202,7 +207,9 @@ public class CheckDeviceActivity extends ActivityBase {
 		new Thread(() -> {
 			// get red company by device
 			try {
-				AndroidDeviceSearchResult searchResult = checkDeviceService.checkAndroidDevice();
+				androidDeviceAppPackageInfos = checkDeviceService.getDeviceAppPackageInfos();
+				androidDeviceCaCerts = checkDeviceService.getDeviceCaCerts();
+				AndroidDeviceSearchResult searchResult = checkDeviceService.checkAndroidDevice(androidDeviceAppPackageInfos, androidDeviceCaCerts);
 				
 				// update view
 				if (searchResult != null) updateViewAfterLoading(searchResult);
@@ -233,7 +240,7 @@ public class CheckDeviceActivity extends ActivityBase {
 			helpMenuItem.setVisible(true);
 			
 			// tabs
-			List<String> tabKeyList = new ArrayList<>();
+			tabKeyList = new ArrayList<>();
 			
 			// tab 1: Device
 			if (searchResult.getDeviceRedCompanyList() != null && searchResult.getDeviceRedCompanyList().getTotalNum() > 0) {
@@ -282,6 +289,8 @@ public class CheckDeviceActivity extends ActivityBase {
 		Intent i = new Intent(this, RedCompanyDetailActivity.class);
 		i.putExtra(RedCompanyDetailActivity.KEY_RED_COMPANY_CODE, redCompanySimple.getCompanyCode());
 		i.putExtra(RedCompanyDetailActivity.KEY_RED_COMPANY_DISPLAY_NAME, redCompanySimple.getDisplayName());
+		if (tabLayout.getSelectedTabPosition() == tabKeyList.indexOf(TAB_KEY_APPS)) i.putExtra(RedCompanyDetailActivity.KEY_ANDROID_DEVICE_APP_PACKAGE_INFOS, new ArrayList<>(androidDeviceAppPackageInfos));
+		if (tabLayout.getSelectedTabPosition() == tabKeyList.indexOf(TAB_KEY_CA_CERTS)) i.putExtra(RedCompanyDetailActivity.KEY_ANDROID_DEVICE_CA_CERTS, new ArrayList<>(androidDeviceCaCerts));
 		startActivity(i);
 	}
 	

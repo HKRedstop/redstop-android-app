@@ -18,6 +18,8 @@ public class RedCompanyDetail implements Serializable {
     private String groupCode;
     private Integer displayOrder;
     private String updateDate;
+    private List<String> androidPackages;
+    private List<String> caCertOrganizations;
 
     public String getCompanyCode() {
         return companyCode;
@@ -121,5 +123,21 @@ public class RedCompanyDetail implements Serializable {
     
     public void setUpdateDate(String updateDate) {
         this.updateDate = updateDate;
+    }
+    
+    public List<String> getAndroidPackages() {
+        return androidPackages;
+    }
+    
+    public void setAndroidPackages(List<String> androidPackages) {
+        this.androidPackages = androidPackages;
+    }
+    
+    public List<String> getCaCertOrganizations() {
+        return caCertOrganizations;
+    }
+    
+    public void setCaCertOrganizations(List<String> caCertOrganizations) {
+        this.caCertOrganizations = caCertOrganizations;
     }
 }

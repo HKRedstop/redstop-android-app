@@ -1,6 +1,11 @@
 package com.ntredize.redstop.common.config;
 
 public class ApiPath {
+	
+	/* API Query Key */
+	public final static String API_QUERY_KEY_ANDROID_PACKAGE = "androidPackage";
+	public final static String API_QUERY_KEY_CA_CERT = "caCert";
+	
 
 	/* API Param */
 	public final static String API_PARAM_FRIEND_CODE = "{friendCode}";

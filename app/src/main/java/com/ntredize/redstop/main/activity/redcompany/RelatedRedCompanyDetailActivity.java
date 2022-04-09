@@ -138,7 +138,7 @@ public class RelatedRedCompanyDetailActivity extends ActivityBase {
 	private void loadRelatedRedCompanyDetailFromServer() {
 		new Thread(() -> {
 			// get red company detail
-			relatedRedCompanyDetail = redCompanyService.getRedCompanyDetailByCompanyCode(relatedRedCompanyCode);
+			relatedRedCompanyDetail = redCompanyService.getRedCompanyDetailByCompanyCode(relatedRedCompanyCode, false, false);
 			
 			// count down latch
 			countDownLatch.countDown();

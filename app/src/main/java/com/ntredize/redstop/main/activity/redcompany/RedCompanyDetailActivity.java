@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.ntredize.redstop.R;
 import com.ntredize.redstop.common.config.PermissionRequestCode;
+import com.ntredize.redstop.db.model.AndroidDeviceAppPackageInfo;
+import com.ntredize.redstop.db.model.AndroidDeviceCaCert;
 import com.ntredize.redstop.db.model.RedCompanyDetail;
 import com.ntredize.redstop.db.model.RedCompanyGroupSearchCriteria;
 import com.ntredize.redstop.db.model.RedCompanySimpleWithCategory;
@@ -24,10 +26,13 @@ import com.ntredize.redstop.main.activity.ActivityBase;
 import com.ntredize.redstop.main.activity.app.SuggestionActivity;
 import com.ntredize.redstop.main.dialog.HelpDialog;
 import com.ntredize.redstop.main.fragment.DummyFragment;
+import com.ntredize.redstop.main.fragment.redcompany.RedCompanyAppsListFragment;
+import com.ntredize.redstop.main.fragment.redcompany.RedCompanyCaCertsListFragment;
 import com.ntredize.redstop.main.fragment.redcompany.RedCompanyDetailInfoFragment;
 import com.ntredize.redstop.main.fragment.redcompany.RedCompanyNoSearchResultFragment;
 import com.ntredize.redstop.main.fragment.redcompany.StickyRedCompanyListFragment;
 import com.ntredize.redstop.main.view.viewpager.MyViewPager;
+import com.ntredize.redstop.support.service.CheckDeviceService;
 import com.ntredize.redstop.support.service.DownloadImageService;
 import com.ntredize.redstop.support.service.SharedPreferenceService;
 import com.ntredize.redstop.support.service.RedCompanyService;
@@ -50,9 +55,13 @@ public class RedCompanyDetailActivity extends ActivityBase {
 	
 	public static final String KEY_RED_COMPANY_CODE = "KEY_RED_COMPANY_CODE";
 	public static final String KEY_RED_COMPANY_DISPLAY_NAME = "KEY_RED_COMPANY_DISPLAY_NAME";
+	public static final String KEY_ANDROID_DEVICE_APP_PACKAGE_INFOS = "KEY_ANDROID_DEVICE_APP_PACKAGE_INFOS";
+	public static final String KEY_ANDROID_DEVICE_CA_CERTS = "KEY_ANDROID_DEVICE_CA_CERTS";
 	
 	private final String TAB_KEY_RED_COMPANY_DETAIL_INFO = "TAB_KEY_RED_COMPANY_DETAIL_INFO";
 	private final String TAB_KEY_RED_COMPANY_RELATED_COMPANY = "TAB_KEY_RED_COMPANY_RELATED_COMPANY";
+	private final String TAB_KEY_RED_COMPANY_APPS = "TAB_KEY_RED_COMPANY_APPS";
+	private final String TAB_KEY_RED_COMPANY_CA_CERTS = "TAB_KEY_RED_COMPANY_CA_CERTS";
 	
 	// activity
 	private RedCompanyDetailActivity activity;
@@ -62,6 +71,7 @@ public class RedCompanyDetailActivity extends ActivityBase {
 	private ThemeService themeService;
 	private RedCompanyService redCompanyService;
 	private DownloadImageService downloadImageService;
+	private CheckDeviceService checkDeviceService;
 	private ShareService shareService;
 	
 	// view
@@ -79,6 +89,8 @@ public class RedCompanyDetailActivity extends ActivityBase {
 	private RedCompanyDetail redCompanyDetail;
 	private RedCompanyGroupSearchCriteria relatedRedCompanySearchCriteria;
 	private SearchResult<RedCompanySimpleWithCategory> relatedRedCompanySearchResult;
+	private List<AndroidDeviceAppPackageInfo> androidDeviceAppPackageInfos;
+	private List<AndroidDeviceCaCert> androidDeviceCaCerts;
 	private String logoFileName;
 	private CountDownLatch countDownLatch;
 	
@@ -103,6 +115,7 @@ public class RedCompanyDetailActivity extends ActivityBase {
 		themeService = new ThemeService(this);
 		redCompanyService = new RedCompanyService(this);
 		downloadImageService = new DownloadImageService(this);
+		checkDeviceService = new CheckDeviceService(this);
 		shareService = new ShareService(this);
 	}
 	
@@ -112,6 +125,7 @@ public class RedCompanyDetailActivity extends ActivityBase {
 	}
 	
 	@Override
+	@SuppressWarnings("unchecked")
 	protected void initData() {
 		// activity
 		activity = this;
@@ -128,6 +142,8 @@ public class RedCompanyDetailActivity extends ActivityBase {
 		else {
 			redCompanyCode = getIntent().getStringExtra(KEY_RED_COMPANY_CODE);
 			redCompanyDisplayName = getIntent().getStringExtra(KEY_RED_COMPANY_DISPLAY_NAME);
+			androidDeviceAppPackageInfos = (List<AndroidDeviceAppPackageInfo>) getIntent().getSerializableExtra(KEY_ANDROID_DEVICE_APP_PACKAGE_INFOS);
+			androidDeviceCaCerts = (List<AndroidDeviceCaCert>) getIntent().getSerializableExtra(KEY_ANDROID_DEVICE_CA_CERTS);
 		}
 		
 		if (redCompanyCode == null) finish();
@@ -178,7 +194,9 @@ public class RedCompanyDetailActivity extends ActivityBase {
 	private void loadRedCompanyDetailFromServer() {
 		new Thread(() -> {
 			// get red company detail
-			redCompanyDetail = redCompanyService.getRedCompanyDetailByCompanyCode(redCompanyCode);
+			redCompanyDetail = redCompanyService.getRedCompanyDetailByCompanyCode(redCompanyCode, androidDeviceAppPackageInfos != null, androidDeviceCaCerts != null);
+			if (redCompanyDetail != null) androidDeviceAppPackageInfos = checkDeviceService.filterRedCompanyAndroidDeviceAppPackageInfos(androidDeviceAppPackageInfos, redCompanyDetail.getAndroidPackages());
+			if (redCompanyDetail != null) androidDeviceCaCerts = checkDeviceService.filterRedCompanyAndroidDeviceCaCerts(androidDeviceCaCerts, redCompanyDetail.getCaCertOrganizations());
 			
 			// count down latch
 			countDownLatch.countDown();
@@ -239,10 +257,20 @@ public class RedCompanyDetailActivity extends ActivityBase {
 			if (redCompanyDetail != null && relatedRedCompanySearchResult != null && relatedRedCompanySearchResult.getTotalNum() > 0) {
 				tabKeyList.add(TAB_KEY_RED_COMPANY_RELATED_COMPANY);
 			}
+			
+			// tab 3: Apps (Show if have apps only)
+			if (redCompanyDetail != null && androidDeviceAppPackageInfos != null && !androidDeviceAppPackageInfos.isEmpty()) {
+				tabKeyList.add(TAB_KEY_RED_COMPANY_APPS);
+			}
+			
+			// tab 4: CA Certs (Show if have ca certs only)
+			if (redCompanyDetail != null && androidDeviceCaCerts != null && !androidDeviceCaCerts.isEmpty()) {
+				tabKeyList.add(TAB_KEY_RED_COMPANY_CA_CERTS);
+			}
 
 			// view pager
 			viewPager.setVisibility(View.VISIBLE);
-			myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), activity, tabKeyList, redCompanyDetail, relatedRedCompanySearchResult);
+			myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), activity, tabKeyList, redCompanyDetail, relatedRedCompanySearchResult, androidDeviceAppPackageInfos, androidDeviceCaCerts);
 			viewPager.setAdapter(myPagerAdapter);
 			tabLayout.setupWithViewPager(viewPager);
 			
@@ -355,14 +383,19 @@ public class RedCompanyDetailActivity extends ActivityBase {
 		private final List<String> tabKeyList;
 		private final RedCompanyDetail redCompanyDetail;
 		private final SearchResult<RedCompanySimpleWithCategory> relatedRedCompanySearchResult;
+		private final List<AndroidDeviceAppPackageInfo> androidDeviceAppPackageInfos;
+		private final List<AndroidDeviceCaCert> androidDeviceCaCerts;
 		
 		MyPagerAdapter(FragmentManager fm, RedCompanyDetailActivity activity, List<String> tabKeyList,
-		               RedCompanyDetail redCompanyDetail, SearchResult<RedCompanySimpleWithCategory> relatedRedCompanySearchResult) {
+		               RedCompanyDetail redCompanyDetail, SearchResult<RedCompanySimpleWithCategory> relatedRedCompanySearchResult,
+		               List<AndroidDeviceAppPackageInfo> androidDeviceAppPackageInfos, List<AndroidDeviceCaCert> androidDeviceCaCerts) {
 			super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 			this.activity = activity;
 			this.tabKeyList = tabKeyList;
 			this.redCompanyDetail = redCompanyDetail;
 			this.relatedRedCompanySearchResult = relatedRedCompanySearchResult;
+			this.androidDeviceAppPackageInfos = androidDeviceAppPackageInfos;
+			this.androidDeviceCaCerts = androidDeviceCaCerts;
 		}
 		
 		@NonNull
@@ -392,6 +425,20 @@ public class RedCompanyDetailActivity extends ActivityBase {
 					fragment.setArguments(buildRelatedCompanyArgs());
 					return fragment;
 				}
+				
+				// apps
+				else if (TAB_KEY_RED_COMPANY_APPS.equals(tabKey)) {
+					RedCompanyAppsListFragment fragment = new RedCompanyAppsListFragment();
+					fragment.setArguments(buildAppsArgs());
+					return fragment;
+				}
+				
+				// ca certs
+				else if (TAB_KEY_RED_COMPANY_CA_CERTS.equals(tabKey)) {
+					RedCompanyCaCertsListFragment fragment = new RedCompanyCaCertsListFragment();
+					fragment.setArguments(buildCaCertsArgs());
+					return fragment;
+				}
 			}
 			return new DummyFragment();
 		}
@@ -411,6 +458,14 @@ public class RedCompanyDetailActivity extends ActivityBase {
 				else if (TAB_KEY_RED_COMPANY_RELATED_COMPANY.equals(tabKey)) {
 					int totalNum = relatedRedCompanySearchResult != null ? relatedRedCompanySearchResult.getTotalNum() : 0;
 					return activity.getString(R.string.label_red_company_related_company) + " (" + totalNum + ")";
+				}
+				else if (TAB_KEY_RED_COMPANY_APPS.equals(tabKey)) {
+					int totalNum = androidDeviceAppPackageInfos != null ? androidDeviceAppPackageInfos.size() : 0;
+					return activity.getString(R.string.label_red_company_apps) + " (" + totalNum + ")";
+				}
+				else if (TAB_KEY_RED_COMPANY_CA_CERTS.equals(tabKey)) {
+					int totalNum = androidDeviceCaCerts != null ? androidDeviceCaCerts.size() : 0;
+					return activity.getString(R.string.label_red_company_ca_certs) + " (" + totalNum + ")";
 				}
 			}
 			return null;
@@ -436,6 +491,18 @@ public class RedCompanyDetailActivity extends ActivityBase {
 			Bundle args = new Bundle();
 			args.putBoolean(StickyRedCompanyListFragment.KEY_SHOW_STICKY_HEADER, true);
 			args.putSerializable(StickyRedCompanyListFragment.KEY_RED_COMPANY_SEARCH_RESULT, relatedRedCompanySearchResult);
+			return args;
+		}
+		
+		private Bundle buildAppsArgs() {
+			Bundle args = new Bundle();
+			args.putSerializable(RedCompanyAppsListFragment.KEY_ANDROID_DEVICE_APP_PACKAGE_INFOS, new ArrayList<>(androidDeviceAppPackageInfos));
+			return args;
+		}
+		
+		private Bundle buildCaCertsArgs() {
+			Bundle args = new Bundle();
+			args.putSerializable(RedCompanyCaCertsListFragment.KEY_ANDROID_DEVICE_CA_CERTS, new ArrayList<>(androidDeviceCaCerts));
 			return args;
 		}
 		

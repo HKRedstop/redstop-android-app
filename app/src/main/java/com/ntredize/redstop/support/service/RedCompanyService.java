@@ -104,8 +104,8 @@ public class RedCompanyService {
 		return redCompanyWebService.getRedCompanySimpleWithCategoryListByGroup(criteria);
 	}
 	
-	public RedCompanyDetail getRedCompanyDetailByCompanyCode(String companyCode) {
-		return redCompanyWebService.getRedCompanyDetailByCompanyCode(companyCode);
+	public RedCompanyDetail getRedCompanyDetailByCompanyCode(String companyCode, boolean obtainAndroidPackage, boolean obtainCaCert) {
+		return redCompanyWebService.getRedCompanyDetailByCompanyCode(companyCode, obtainAndroidPackage, obtainCaCert);
 	}
 	
 	

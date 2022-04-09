@@ -27,6 +27,8 @@
     <string name="label_category_company">分類模式</string>
     <string name="label_red_company_detail_info">公司資料</string>
     <string name="label_red_company_related_company">相關公司</string>
+    <string name="label_red_company_apps">Apps</string>
+    <string name="label_red_company_ca_certs">憑證</string>
     <string name="label_red_company_no_result">沒有相關公司</string>
     <string name="label_red_company_update_date">更新日期：</string>
     <string name="label_scan_barcode">掃描商品條碼</string>
@@ -124,6 +126,7 @@
     <string name="content_desc_company_red_star_2">2粒星</string>
     <string name="content_desc_company_red_star_1">1粒星</string>
     <string name="content_desc_company_red_star_0">0粒星</string>
+    <string name="content_desc_app_logo">App Logo</string>
     <string name="content_desc_tutorial_introduction">簡介</string>
     <string name="content_desc_tutorial_red_star">星星數量</string>
     <string name="content_desc_tutorial_check_device">檢查電話</string>
