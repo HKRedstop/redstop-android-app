@@ -34,15 +34,11 @@ public class ApiPath {
 	public final static String API_PATH_EXTENSION_CHECK = "/check/v3";
 
 	// image
-	private final static String SUFFIX_FRIEND_CODE_DARK = "_d";
-	
 	private final static String SUFFIX_IMAGE_FRIEND = ".png";
 	private final static String SUFFIX_IMAGE_RED_COMPANY = ".jpg";
 	
 	public final static String API_PATH_IMAGE_FRIEND = "/friend/" + API_PARAM_FRIEND_CODE + SUFFIX_IMAGE_FRIEND;
-	public final static String API_PATH_IMAGE_FRIEND_DARK = "/friend/" + API_PARAM_FRIEND_CODE + SUFFIX_FRIEND_CODE_DARK + SUFFIX_IMAGE_FRIEND;
 	public final static String API_PATH_IMAGE_FRIEND_THUMBNAIL = "/friend-thumbnail/" + API_PARAM_FRIEND_CODE + SUFFIX_IMAGE_FRIEND;
-	public final static String API_PATH_IMAGE_FRIEND_THUMBNAIL_DARK = "/friend-thumbnail/" + API_PARAM_FRIEND_CODE + SUFFIX_FRIEND_CODE_DARK + SUFFIX_IMAGE_FRIEND;
 	public final static String API_PATH_IMAGE_RED_COMPANY = "/red-company/" + API_PARAM_GROUP_CODE + "/" + API_PARAM_COMPANY_CODE + SUFFIX_IMAGE_RED_COMPANY;
 	public final static String API_PATH_IMAGE_RED_COMPANY_THUMBNAIL = "/red-company-thumbnail/" + API_PARAM_GROUP_CODE + "/" + API_PARAM_COMPANY_CODE + SUFFIX_IMAGE_RED_COMPANY;
 	

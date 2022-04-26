@@ -1,7 +1,6 @@
 package com.ntredize.redstop.main.drawer;
 
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 import com.ntredize.redstop.R;
 import com.ntredize.redstop.main.activity.ActivityBase;
 import com.ntredize.redstop.support.service.DownloadImageService;
-import com.ntredize.redstop.support.utils.AttrUtils;
 
 import java.util.List;
 
@@ -25,37 +23,36 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 	
 	// view type
 	private final static int VIEW_TYPE_HEADER = 0;
-	private final static int VIEW_TYPE_ITEM = 1;
+	private final static int VIEW_TYPE_SPACE = 1;
+	private final static int VIEW_TYPE_ITEM = 2;
 	
 	// activity
 	private final ActivityBase activity;
-
+	
 	// service
-	private final AttrUtils attrUtils;
 	private final DownloadImageService downloadImageService;
 	
 	// data
-	private final boolean isDarkMode;
 	private final List<DrawerItem> list;
 	
 	
 	/* Init */
-	DrawerAdapter(ActivityBase activity, boolean isDarkMode, List<DrawerItem> list) {
+	DrawerAdapter(ActivityBase activity, List<DrawerItem> list) {
 		// activity
 		this.activity = activity;
 
 		// service
-		this.attrUtils = new AttrUtils(activity);
 		this.downloadImageService = new DownloadImageService(activity);
 		
 		// data
-		this.isDarkMode = isDarkMode;
 		this.list = list;
 	}
 	
 	@Override
 	public int getItemViewType(int position) {
-		if (DrawerItem.TYPE_HEADER.equals(list.get(position).getType())) return VIEW_TYPE_HEADER;
+		String type = list.get(position).getType();
+		if (DrawerItem.TYPE_HEADER.equals(type)) return VIEW_TYPE_HEADER;
+		else if (DrawerItem.TYPE_SPACE.equals(type)) return VIEW_TYPE_SPACE;
 		else return VIEW_TYPE_ITEM;
 	}
 	
@@ -66,6 +63,10 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 			View contactView = LayoutInflater.from(activity).inflate(R.layout.row_drawer_header, parent, false);
 			return new HeaderViewHolder(contactView);
 		}
+		else if (viewType == VIEW_TYPE_SPACE) {
+			View contactView = LayoutInflater.from(activity).inflate(R.layout.row_drawer_space, parent, false);
+			return new SpaceViewHolder(contactView);
+		}
 		else {
 			View contactView = LayoutInflater.from(activity).inflate(R.layout.row_drawer_item, parent, false);
 			return new ItemViewHolder(contactView, new MyClickListener());
@@ -74,7 +75,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 	
 	@Override
 	public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-		if (DrawerItem.TYPE_HEADER.equals(list.get(position).getType())) onBindHeaderViewHolder((HeaderViewHolder) holder, position);
+		String type = list.get(position).getType();
+		if (DrawerItem.TYPE_HEADER.equals(type)) onBindHeaderViewHolder((HeaderViewHolder) holder, position);
+		else if (DrawerItem.TYPE_SPACE.equals(type)) onBindSpaceViewHolder();
 		else onBindItemViewHolder((ItemViewHolder) holder, position);
 	}
 	
@@ -88,12 +91,16 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 		headerText.setText(headerTitle);
 	}
 	
+	private void onBindSpaceViewHolder() {
+		// nothing to do
+	}
+	
 	private void onBindItemViewHolder(@NonNull ItemViewHolder holder, int position) {
 		// get data from list
 		DrawerItem drawerItem = list.get(position);
+		String type = drawerItem.getType();
 		Drawable imageDrawable = drawerItem.getImageDrawable();
 		Bitmap imageBitmap = drawerItem.getImageBitmap();
-		boolean tintImage = drawerItem.isTintImage();
 		String name = drawerItem.getName();
 		String desc = drawerItem.getDesc();
 		Runnable action = drawerItem.getAction();
@@ -107,32 +114,33 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 		clickCover.setClickable(enabled);
 		
 		// image
-		ImageView drawerImage = holder.drawerImage;
-		drawerImage.setImageDrawable(null);
+		ImageView functionImage = holder.functionImage;
+		RelativeLayout friendImageContainer = holder.friendImageContainer;
+		ImageView friendImage = holder.friendImage;
 		
-		// image (tint color)
-		if (tintImage) {
-			int color = attrUtils.getAttrColorInt(R.attr.textNormalColor);
-			drawerImage.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-		}
-		else drawerImage.clearColorFilter();
+		functionImage.setImageDrawable(null);
+		functionImage.setVisibility(View.GONE);
+		friendImage.setImageDrawable(null);
+		friendImageContainer.setVisibility(View.GONE);
+		
+		if (DrawerItem.TYPE_FUNCTION.equals(type)) functionImage.setVisibility(View.VISIBLE);
+		else if (DrawerItem.TYPE_FRIEND.equals(type)) friendImageContainer.setVisibility(View.VISIBLE);
 		
 		// image (set or download)
-		if (imageDrawable != null) {
-			drawerImage.setImageDrawable(imageDrawable);
-		}
-		else if (imageBitmap != null) {
-			drawerImage.setImageBitmap(imageBitmap);
-		}
-		else if (drawerItem.getImageUrl() != null) {
-			new Thread(() -> {
-				Bitmap downloadImageBitmap = downloadImageService.getImageByUrl(drawerItem.getImageUrl());
-				activity.runOnUiThread(() -> drawerImage.setImageBitmap(downloadImageBitmap));
-
-				// save cache image
-				drawerItem.setImageBitmap(downloadImageBitmap);
-				downloadImageService.saveFriendImageAsCache(drawerItem.getImageCacheKey(), isDarkMode, downloadImageBitmap);
-			}).start();
+		final ImageView targetImageView = DrawerItem.TYPE_FUNCTION.equals(type) ? functionImage : DrawerItem.TYPE_FRIEND.equals(type) ? friendImage : null;
+		if (targetImageView != null) {
+			if (imageDrawable != null) targetImageView.setImageDrawable(imageDrawable);
+			else if (imageBitmap != null) targetImageView.setImageBitmap(imageBitmap);
+			else if (drawerItem.getImageUrl() != null) {
+				new Thread(() -> {
+					Bitmap downloadImageBitmap = downloadImageService.getImageByUrl(drawerItem.getImageUrl());
+					activity.runOnUiThread(() -> targetImageView.setImageBitmap(downloadImageBitmap));
+					
+					// save cache image
+					drawerItem.setImageBitmap(downloadImageBitmap);
+					downloadImageService.saveFriendImageAsCache(drawerItem.getImageCacheKey(), downloadImageBitmap);
+				}).start();
+			}
 		}
 		
 		// name
@@ -174,6 +182,12 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 		}
 	}
 	
+	static class SpaceViewHolder extends RecyclerView.ViewHolder {
+		SpaceViewHolder(View itemView) {
+			super(itemView);
+		}
+	}
+	
 	static class ItemViewHolder extends RecyclerView.ViewHolder {
 		
 		// listener
@@ -181,7 +195,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 		
 		// view
 		RelativeLayout clickCover;
-		ImageView drawerImage;
+		ImageView functionImage;
+		RelativeLayout friendImageContainer;
+		ImageView friendImage;
 		TextView nameText;
 		TextView descText;
 		
@@ -191,7 +207,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 			
 			// view
 			clickCover = itemView.findViewById(R.id.drawer_item_row_click_cover);
-			drawerImage = itemView.findViewById(R.id.drawer_item_row_image);
+			functionImage = itemView.findViewById(R.id.drawer_item_row_function_image);
+			friendImageContainer = itemView.findViewById(R.id.drawer_item_row_friend_image_container);
+			friendImage = itemView.findViewById(R.id.drawer_item_row_friend_image);
 			nameText = itemView.findViewById(R.id.drawer_item_row_name);
 			descText = itemView.findViewById(R.id.drawer_item_row_desc);
 			

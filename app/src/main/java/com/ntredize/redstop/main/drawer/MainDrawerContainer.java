@@ -39,7 +39,7 @@ public class MainDrawerContainer extends RelativeLayout {
 		super(context, attrs);
 	}
 	
-	public void init(Context context, DrawerLayout drawerLayout, boolean isDarkMode) {
+	public void init(Context context, DrawerLayout drawerLayout) {
 		// activity
 		this.activity = (HomeActivity) context;
 
@@ -49,11 +49,12 @@ public class MainDrawerContainer extends RelativeLayout {
 		
 		// item
 		List<DrawerItem> drawerItemList = new ArrayList<>();
-		drawerItemList.addAll(buildMainDrawerItemList(isDarkMode));
-		drawerItemList.addAll(buildFriendDrawerItemList(isDarkMode));
+		drawerItemList.addAll(buildMainDrawerItemList());
+		drawerItemList.addAll(buildFriendDrawerItemList());
+		drawerItemList.add(new DrawerItem(DrawerItem.TYPE_SPACE));
 		
 		// view
-		DrawerAdapter drawerAdapter = new DrawerAdapter(activity, isDarkMode, drawerItemList);
+		DrawerAdapter drawerAdapter = new DrawerAdapter(activity, drawerItemList);
 		MyRecyclerView recyclerView = findViewById(R.id.drawer_recycler_view);
 		recyclerView.setVisibility(View.VISIBLE);
 		recyclerView.setAdapter(drawerAdapter);
@@ -62,54 +63,48 @@ public class MainDrawerContainer extends RelativeLayout {
 		drawerLayout.addDrawerListener(new MyDrawerListener(recyclerView));
 	}
 	
-	private List<DrawerItem> buildMainDrawerItemList(boolean isDarkMode) {
+	private List<DrawerItem> buildMainDrawerItemList() {
 		List<DrawerItem> mainDrawerItemList = new ArrayList<>();
 
 		// help
-		DrawerItem helpItem = new DrawerItem();
+		DrawerItem helpItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		helpItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_help));
-		helpItem.setTintImage(true);
 		helpItem.setName(activity.getString(R.string.drawer_help));
 		helpItem.setAction(this::showHelpDialog);
 		mainDrawerItemList.add(helpItem);
 		
 		// suggestion
-		DrawerItem suggestionItem = new DrawerItem();
+		DrawerItem suggestionItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		suggestionItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_suggestion));
-		suggestionItem.setTintImage(true);
 		suggestionItem.setName(activity.getString(R.string.drawer_suggestion));
 		suggestionItem.setAction(() -> activity.startSuggestion());
 		mainDrawerItemList.add(suggestionItem);
 		
 		// scan barcode
-		DrawerItem scanBarcodeItem = new DrawerItem();
+		DrawerItem scanBarcodeItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		scanBarcodeItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_barcode));
-		scanBarcodeItem.setTintImage(true);
 		scanBarcodeItem.setName(activity.getString(R.string.drawer_scan_barcode));
 		scanBarcodeItem.setDesc(activity.getString(R.string.drawer_scan_barcode_desc));
 		scanBarcodeItem.setAction(() -> activity.startScanBarcode());
 		mainDrawerItemList.add(scanBarcodeItem);
 		
 		// check device
-		DrawerItem checkDeviceItem = new DrawerItem();
+		DrawerItem checkDeviceItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		checkDeviceItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_android));
-		checkDeviceItem.setTintImage(true);
 		checkDeviceItem.setName(activity.getString(R.string.drawer_check_device));
 		checkDeviceItem.setAction(() -> activity.startCheckDevice());
 		mainDrawerItemList.add(checkDeviceItem);
 		
 		// check website
-		DrawerItem checkWebsiteItem = new DrawerItem();
+		DrawerItem checkWebsiteItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		checkWebsiteItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_browser));
-		checkWebsiteItem.setTintImage(true);
 		checkWebsiteItem.setName(activity.getString(R.string.drawer_check_website));
 		checkWebsiteItem.setAction(() -> activity.startCheckWebsite());
 		mainDrawerItemList.add(checkWebsiteItem);
 		
 		// setting
-		DrawerItem settingItem = new DrawerItem();
+		DrawerItem settingItem = new DrawerItem(DrawerItem.TYPE_FUNCTION);
 		settingItem.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.drawer_image_setting));
-		settingItem.setTintImage(true);
 		settingItem.setName(activity.getString(R.string.drawer_setting));
 		settingItem.setAction(() -> activity.startSetting());
 		mainDrawerItemList.add(settingItem);
@@ -117,41 +112,36 @@ public class MainDrawerContainer extends RelativeLayout {
 		return mainDrawerItemList;
 	}
 	
-	private List<DrawerItem> buildFriendDrawerItemList(boolean isDarkMode) {
+	private List<DrawerItem> buildFriendDrawerItemList() {
 		List<DrawerItem> friendDrawerItemList = new ArrayList<>();
 		String lastCategoryName = null;
-
+		
 		for (FriendSuggestion friend : friendSuggestionService.getAllFriendSuggestion()) {
 			// header
 			if (lastCategoryName == null || !lastCategoryName.equals(friend.getCategoryName())) {
-				DrawerItem drawerHeader = new DrawerItem();
-				drawerHeader.setType(DrawerItem.TYPE_HEADER);
+				DrawerItem drawerHeader = new DrawerItem(DrawerItem.TYPE_HEADER);
 				drawerHeader.setHeaderTitle(friend.getCategoryName());
 				drawerHeader.setEnabled(false);
 				friendDrawerItemList.add(drawerHeader);
-
+				
 				lastCategoryName = friend.getCategoryName();
 			}
-
+			
 			// item
-			DrawerItem drawerItem = new DrawerItem();
+			DrawerItem drawerItem = new DrawerItem(DrawerItem.TYPE_FRIEND);
 			drawerItem.setName(friend.getName());
-
+			
 			// item: image
 			drawerItem.setImageCacheKey(friend.getFriendCode());
-			Bitmap cacheImage = downloadImageService.getCacheFriendImage(friend.getFriendCode(), isDarkMode);
-			if (cacheImage != null) {
-				drawerItem.setImageBitmap(cacheImage);
-			}
-			else {
-				drawerItem.setImageUrl(downloadImageService.getFriendThumbnailImageUrl(friend.getFriendCode(), isDarkMode));
-			}
-
+			Bitmap cacheImage = downloadImageService.getCacheFriendImage(friend.getFriendCode());
+			if (cacheImage != null) drawerItem.setImageBitmap(cacheImage);
+			else drawerItem.setImageUrl(downloadImageService.getFriendThumbnailImageUrl(friend.getFriendCode()));
+			
 			// item: remark
 			if (friend.getRemark() != null && !friend.getRemark().isEmpty()) {
 				drawerItem.setDesc(friend.getRemark());
 			}
-
+			
 			// item: url
 			if (friend.getUrl() != null && !friend.getUrl().isEmpty()) {
 				drawerItem.setAction(() -> {
@@ -162,7 +152,7 @@ public class MainDrawerContainer extends RelativeLayout {
 			
 			friendDrawerItemList.add(drawerItem);
 		}
-
+		
 		return friendDrawerItemList;
 	}
 	

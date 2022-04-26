@@ -6,26 +6,26 @@ import android.graphics.drawable.Drawable;
 public class DrawerItem {
 	
 	public final static String TYPE_HEADER = "TYPE_HEADER";
-	public final static String TYPE_ITEM = "TYPE_ITEM";
+	public final static String TYPE_FUNCTION = "TYPE_FUNCTION";
+	public final static String TYPE_FRIEND = "TYPE_FRIEND";
+	public final static String TYPE_SPACE = "TYPE_SPACE";
 	
 	private String type;
 	
 	private String headerTitle;
-
+	
 	private String imageCacheKey;
 	private String imageUrl;
 	private Drawable imageDrawable;
 	private Bitmap imageBitmap;
-	private boolean tintImage;
 	private String name;
 	private String desc;
 	private Runnable action;
 	
 	private boolean enabled;
 	
-	public DrawerItem() {
-		type = TYPE_ITEM;
-		tintImage = false;
+	public DrawerItem(String type) {
+		this.type = type;
 		enabled = true;
 	}
 	
@@ -44,23 +44,23 @@ public class DrawerItem {
 	public void setHeaderTitle(String headerTitle) {
 		this.headerTitle = headerTitle;
 	}
-
+	
 	public Drawable getImageDrawable() {
 		return imageDrawable;
 	}
-
+	
 	public void setImageDrawable(Drawable imageDrawable) {
 		this.imageDrawable = imageDrawable;
 	}
-
+	
 	public Bitmap getImageBitmap() {
 		return imageBitmap;
 	}
-
+	
 	public void setImageBitmap(Bitmap imageBitmap) {
 		this.imageBitmap = imageBitmap;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -92,28 +92,20 @@ public class DrawerItem {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-
+	
 	public String getImageCacheKey() {
 		return imageCacheKey;
 	}
-
+	
 	public void setImageCacheKey(String imageCacheKey) {
 		this.imageCacheKey = imageCacheKey;
 	}
-
+	
 	public String getImageUrl() {
 		return imageUrl;
 	}
-
+	
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
-	}
-	
-	public boolean isTintImage() {
-		return tintImage;
-	}
-	
-	public void setTintImage(boolean tintImage) {
-		this.tintImage = tintImage;
 	}
 }

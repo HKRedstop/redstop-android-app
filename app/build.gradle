@@ -6,8 +6,8 @@ android {
         applicationId "com.ntredize.redstop"
         minSdk 23
         targetSdk 31
-        versionCode 57
-        versionName "3.23"
+        versionCode 58
+        versionName "3.24"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.media:media:1.5.0'
+    implementation 'androidx.media:media:1.6.0'
     implementation 'androidx.browser:browser:1.4.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'

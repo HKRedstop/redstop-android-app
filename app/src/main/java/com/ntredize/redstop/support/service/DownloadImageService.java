@@ -16,7 +16,6 @@ public class DownloadImageService {
 
     private static final String FRIEND_FOLDER = "friend";
     private static final String FRIEND_EXT = "png";
-	private static final String FRIEND_DARK_SUFFIX = "_d";
 
     private static final String RED_COMPANY_FOLDER = "redCompany";
     private static final String RED_COMPANY_EXT = "jpg";
@@ -48,8 +47,8 @@ public class DownloadImageService {
 
 
     /* URL: Friend */
-	public String getFriendThumbnailImageUrl(String friendCode, boolean isDarkMode) {
-		return downloadImageWebService.getFriendImageUrl(friendCode, isDarkMode, true);
+	public String getFriendThumbnailImageUrl(String friendCode) {
+		return downloadImageWebService.getFriendImageUrl(friendCode, true);
 	}
     
     
@@ -64,27 +63,25 @@ public class DownloadImageService {
 
 	
 	/* Cache File: Friend */
-	private File getFriendCacheImageFile(String friendCode, boolean isDarkMode) {
-		String fileName = friendCode;
-		if (isDarkMode) fileName += FRIEND_DARK_SUFFIX;
-		return getCacheImageFile(Collections.singletonList(FRIEND_FOLDER), fileName, FRIEND_EXT);
+	private File getFriendCacheImageFile(String friendCode) {
+		return getCacheImageFile(Collections.singletonList(FRIEND_FOLDER), friendCode, FRIEND_EXT);
 	}
 	
-	public Bitmap getCacheFriendImage(String friendCode, boolean isDarkMode) {
-		File file = getFriendCacheImageFile(friendCode, isDarkMode);
+	public Bitmap getCacheFriendImage(String friendCode) {
+		File file = getFriendCacheImageFile(friendCode);
 		if (fileUtils.isFileExist(file)) {
 			return BitmapFactory.decodeFile(file.getPath());
 		}
 		return null;
 	}
 	
-    public void saveFriendImageAsCache(String friendCode, boolean isDarkMode, Bitmap bitmap) {
-        File file = getFriendCacheImageFile(friendCode, isDarkMode);
-        if (fileUtils.isFileExist(file)) {
-            fileUtils.deleteFile(file);
-        }
-        fileUtils.saveBitmapPng(file, bitmap, null);
-    }
+	public void saveFriendImageAsCache(String friendCode, Bitmap bitmap) {
+		File file = getFriendCacheImageFile(friendCode);
+		if (fileUtils.isFileExist(file)) {
+			fileUtils.deleteFile(file);
+		}
+		fileUtils.saveBitmapPng(file, bitmap, null);
+	}
 
 
     /* Cache File Red Company */

@@ -5,6 +5,7 @@
     <style name="drawerSeparateLine">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">8dp</item>
         <item name="android:background">?attr/backgroundSeparatorColor</item>
     </style>
 
@@ -32,23 +33,55 @@
     <style name="drawerItemContainer">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:paddingTop">15dp</item>
-        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingStart">30dp</item>
         <item name="android:paddingEnd">30dp</item>
         <item name="android:clickable">true</item>
     </style>
 
-    <style name="drawerItemImage">
+    <style name="drawerItemImageContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="drawerItemFunctionImage">
         <item name="android:layout_height">25dp</item>
         <item name="android:layout_width">25dp</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">7dp</item>
         <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="tintMode">src_in</item>
+        <item name="tint">?attr/textNormalColor</item>
+    </style>
+
+    <style name="drawerItemFriendImageContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginEnd">15dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:background">?attr/imageBorderColor</item>
+    </style>
+
+    <style name="drawerItemFriendImage">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">?attr/imageBackgroundColor</item>
     </style>
 
     <style name="drawerItemName">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">?attr/textNormalColor</item>
     </style>
 
@@ -58,6 +91,13 @@
         <item name="android:paddingTop">5dp</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">?attr/textRemarkColor</item>
+    </style>
+
+
+    <!-- Space -->
+    <style name="drawerSpace">
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
 </resources>

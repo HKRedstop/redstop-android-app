@@ -30,11 +30,8 @@ public class DownloadImageWebService {
 
 
     /* Friend */
-    public String getFriendImageUrl(String friendCode, boolean isDarkMode, boolean isThumbnail) {
-        String apiUrl;
-        if (isDarkMode) apiUrl = isThumbnail ? ApiPath.API_PATH_IMAGE_FRIEND_THUMBNAIL_DARK : ApiPath.API_PATH_IMAGE_FRIEND_DARK;
-        else apiUrl = isThumbnail ? ApiPath.API_PATH_IMAGE_FRIEND_THUMBNAIL : ApiPath.API_PATH_IMAGE_FRIEND;
-        
+    public String getFriendImageUrl(String friendCode, boolean isThumbnail) {
+        String apiUrl = isThumbnail ? ApiPath.API_PATH_IMAGE_FRIEND_THUMBNAIL : ApiPath.API_PATH_IMAGE_FRIEND;
         apiUrl = apiUrl.replace(ApiPath.API_PARAM_FRIEND_CODE, friendCode);
         return apiUrl;
     }

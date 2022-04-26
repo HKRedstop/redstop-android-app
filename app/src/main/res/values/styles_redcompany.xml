@@ -51,6 +51,8 @@
     <style name="redCompanyRowLogoImage">
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">50dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
         <item name="android:padding">?attr/rowImagePadding</item>
     </style>
 

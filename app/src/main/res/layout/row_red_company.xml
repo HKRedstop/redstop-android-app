@@ -23,8 +23,6 @@
                 <ImageView
                     android:id="@+id/red_company_row_logo_image"
                     style="@style/redCompanyRowLogoImage"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:contentDescription="@string/content_desc_company_logo"/>
 
             </RelativeLayout>

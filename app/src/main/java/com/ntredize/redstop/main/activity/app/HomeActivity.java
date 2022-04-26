@@ -126,7 +126,7 @@ public class HomeActivity extends ActivityBase implements View.OnClickListener {
 		
 		// set on click listener
 		MainDrawerContainer mainDrawerContainer = findViewById(R.id.main_drawer_container);
-		mainDrawerContainer.init(this, mainDrawerLayout, isDarkMode);
+		mainDrawerContainer.init(this, mainDrawerLayout);
 		mainDrawerContainer.bringToFront();
 		
 		// use home button to open and close drawer
